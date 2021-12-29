@@ -1,111 +1,63 @@
-import * as React from "react";
-import { Link } from "gatsby";
+import * as React from 'react';
+import { Link } from 'gatsby';
 
-import logo from "../img/logo.svg";
-import facebook from "../img/social/facebook.svg";
-import instagram from "../img/social/instagram.svg";
-import twitter from "../img/social/twitter.svg";
-import vimeo from "../img/social/vimeo.svg";
+import logo from '../img/ebs-logo.jpg';
+import facebook from '../img/social/facebook.svg';
+import instagram from '../img/social/instagram.svg';
+import twitter from '../img/social/twitter.svg';
+import vimeo from '../img/social/vimeo.svg';
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: "14em", height: "10em" }}
-          />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div style={{ maxWidth: "100vw" }} className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
+      <footer className="bg-black text-white md:px-20 md:py-12 px-6 py-4">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="text-center mb-6">
+            <img src={logo} alt="EBS Performance" style={{ height: '8em' }} />
+          </div>
+          <div className="md:flex">
+            <div className="flex flex-col mb-6 md:w-1/3 md:mb-0">
+              <div className="uppercase text-lg font-bold mb-4">Hours</div>
+              <div className="uppercase mb-3">Mon - Fri: 5AM - 10PM</div>
+              <div className="uppercase mb-3">Sat - Sun: 7AM - 8PM</div>
+            </div>
+            <div className="flex flex-col mb-6 md:w-1/3">
+              <div className="uppercase text-lg font-bold mb-4">
+                Contact Info
               </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: "1em", height: "1em" }}
-                  />
+              <div className="mb-3">1111 Baker St, Costa Mesa, CA 92626</div>
+              <div className="mb-3">(555) 555-555</div>
+              <div className="mb-3">
+                <a
+                  href="mailto:info@ebsperformance.com"
+                  className="hover:underline font-semibold"
+                >
+                  info@ebsperformance.com
                 </a>
               </div>
             </div>
+            <div className="flex flex-col mb-6 md:w-1/3">
+              <div className="uppercase text-lg font-bold mb-4">Pages</div>
+              <Link className="mb-3 hover:underline font-semibold" to="/about">
+                About
+              </Link>
+              <Link
+                className="mb-3 hover:underline font-semibold"
+                to="/contact"
+              >
+                Contact
+              </Link>
+            </div>
           </div>
+          <div className="mb-6">
+            <a
+              href="https://www.instagram.com/ebs.performance"
+              className="flex items-center text-xl mr-3"
+            >
+              <i className="fa fa-instagram text-white" aria-hidden="true" />
+            </a>
+          </div>
+          <div className="text-sm font-light">© 2021, EBS Performance, LLC</div>
         </div>
       </footer>
     );
