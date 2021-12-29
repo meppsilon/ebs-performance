@@ -1,0 +1,30 @@
+.navbar {
+  min-height: 3.25rem;
+}
+
+.navbar-item {
+  color: #fff;
+  display: block;
+  line-height: 1.5;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+}
+.navbar-item .icon:only-child {
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+}
+
+a.navbar-item {
+  cursor: pointer;
+}
+a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active {
+  color: rgb(156 163 175);
+}
+
+.menu-item {
+  padding: 8px 0;
+  border: 1px solid #333333bf;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
