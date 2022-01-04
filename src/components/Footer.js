@@ -1,15 +1,20 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 
-import logo from '../img/ebs-logo.jpg';
+import logo from '../img/EBSprimarylogo.png';
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="bg-black text-white md:px-20 md:py-12 px-6 py-4">
+      <footer className="bg-ebsBlack text-white md:px-20 md:py-12 px-6 py-4">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-6">
-            <img src={logo} alt="EBS Performance" style={{ height: '8em' }} />
+            <img
+              src={logo}
+              alt="EBS Performance"
+              style={{ height: '8em' }}
+              className="bg-white rounded-full"
+            />
           </div>
           <div className="md:flex">
             <div className="flex flex-col mb-6 md:w-1/3 md:mb-0">

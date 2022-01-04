@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import logo from '../../img/ebs-logo.jpg';
+import logo from '../../img/EBSprimarylogo.png';
 import MenuButton from './Menu';
 import SmallMenu from './SmallMenu';
 
@@ -40,13 +40,17 @@ const Navbar = class extends React.Component {
     console.log(`smallest`, smallest);
     return (
       <nav
-        className="bg-black relative z-30 py-2 px-4"
+        className="bg-ebsBlack relative z-30 py-2 px-4"
         role="navigation"
         aria-label="main-navigation"
       >
         <div className="flex">
           <Link to="/" className="navbar-item text-white" title="Logo">
-            <img src={logo} alt="EBS Performance" className="w-8 h-8" />
+            <img
+              src={logo}
+              alt="EBS Performance"
+              className="w-8 h-8 bg-white rounded-full"
+            />
           </Link>
           {!smallest ? (
             <div

@@ -1,5 +1,10 @@
 @tailwind base;
 @tailwind components;
 @import "./navbar.css";
+
+body {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
 @tailwind utilities;
 
