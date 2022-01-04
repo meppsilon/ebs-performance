@@ -24,12 +24,19 @@ export const IndexPageTemplate = ({
   return (
     <div>
       <FullWidthImage img={heroImage} />
-      <section className="md:px-16 md:py-16 px-4 py-8 bg-secondary" style={{
-        backgroundImage: `linear-gradient(to bottom right, #6D6D6D, #d3d3d3)`,
-      }}>
-        <h2 className="text-white text-3xl font-bold mb-8 text-center">Upcoming Events</h2>
+      <section
+        className="md:px-16 md:py-16 px-4 py-8 bg-secondary"
+        style={{
+          backgroundImage: `linear-gradient(to bottom right, #6D6D6D, #d3d3d3)`,
+        }}
+      >
+        <h2 className="text-white text-3xl font-bold mb-8 text-center">
+          Upcoming Events
+        </h2>
         <div className="flex flex-col md:flex-row md:justify-center">
-          <img src={event} style={{ maxWidth: 410 }} />
+          <Link to="/bench-press">
+            <img src={event} />
+          </Link>
           <div className="mt-6 md:mt-0 md:ml-20">
             <h2 className="text-white text-xl font-bold mb-4">
               Bench Press Contest

@@ -26,8 +26,13 @@ const Footer = class extends React.Component {
               <div className="uppercase text-lg font-bold mb-4">
                 Contact Info
               </div>
-              <div className="mb-3">1111 Baker St, Costa Mesa, CA 92626</div>
-              <div className="mb-3">(555) 555-555</div>
+              <a
+                href="https://maps.google.com/?q=1111 Baker St, Costa Mesa, CA 92626"
+                className="mb-3 font-semibold hover:underline"
+              >
+                1111 Baker St, Costa Mesa, CA 92626
+              </a>
+              <div className="mb-3">(555) 555-5555</div>
               <div className="mb-3">
                 <a
                   href="mailto:info@ebsperformance.com"
