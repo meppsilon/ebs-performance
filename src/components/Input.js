@@ -1,0 +1,26 @@
+import React from 'react';
+import classnames from 'classnames';
+
+const Input = ({ containerClassName, input, meta, placeholder, label }) => (
+  <div className={containerClassName}>
+    <div className="mb-2 text-white font-semibold">{label}</div>
+    <input
+      id="default"
+      className={classnames(
+        'px-4 py-2 rounded border focus:outline-none focus:ring-2 focus:ring-gray-200 w-full',
+        {
+          'border-red-500 text-red-600 placeholder-red-600 mb-1':
+            meta.error && meta.touched,
+          'border-gray-300': !meta.error || !meta.touched,
+        }
+      )}
+      placeholder={placeholder}
+      {...input}
+    />
+    {meta.error && meta.touched && (
+      <span className="text-red-600 text-center mt-2">{meta.error}</span>
+    )}
+  </div>
+);
+
+export default Input;

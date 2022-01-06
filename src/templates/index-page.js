@@ -45,7 +45,7 @@ export const IndexPageTemplate = ({
             <div className="text-white mb-3">Starts at 9am</div>
             <Link
               to="/bench-press"
-              className="text-white bg-primary px-4 py-2 rounded hover:bg-primaryDark"
+              className="btn-primary"
             >
               Register Here
             </Link>

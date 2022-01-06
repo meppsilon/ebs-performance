@@ -24,7 +24,7 @@ const formatMediaQuery = (query) => {
 };
 
 const propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
   breakpoints: PropTypes.array,
   updateSettings: PropTypes.bool,
   settings: PropTypes.object,
