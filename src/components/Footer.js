@@ -32,7 +32,7 @@ const Footer = class extends React.Component {
               >
                 1111 Baker St, Costa Mesa, CA 92626
               </a>
-              <div className="mb-3">(555) 555-5555</div>
+              {/* <div className="mb-3">(555) 555-5555</div> */}
               <div className="mb-3">
                 <a
                   href="mailto:info@ebsperformance.com"
@@ -44,7 +44,7 @@ const Footer = class extends React.Component {
             </div>
             <div className="flex flex-col mb-6 md:w-1/3">
               <div className="uppercase text-lg font-bold mb-4">Pages</div>
-              <Link className="mb-3 hover:underline font-semibold" to="/about">
+              {/* <Link className="mb-3 hover:underline font-semibold" to="/about">
                 About
               </Link>
               <Link
@@ -52,7 +52,7 @@ const Footer = class extends React.Component {
                 to="/contact"
               >
                 Contact
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div className="mb-6">
