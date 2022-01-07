@@ -1,11 +1,19 @@
-import { navigate } from 'gatsby';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import Input from './Input';
 import Select from './Select';
-import { writeBenchPressData } from '../utils/firebase';
+import { getBenchPressData, writeBenchPressData } from '../utils/firebase';
 
 const BenchContestForm = () => {
+  const [enrolleeEmails, setEnrolleeEmails] = useState([]);
+  useEffect(() => {
+    const getBenchPressWrapper = async () => {
+      const benchPressEnrollees = await getBenchPressData();
+      const emails = benchPressEnrollees.map(e => e.email);
+      setEnrolleeEmails(emails);
+    };
+    getBenchPressWrapper();
+  }, []);
   const validate = (values) => {
     const errors = {};
     if (!values.firstName) {
@@ -33,18 +41,18 @@ const BenchContestForm = () => {
     }
     if (!values.email) {
       errors.email = 'Required!';
+    } else if (enrolleeEmails.includes(values.email)) {
+      errors.email = 'This email has already registered!';
     }
     return errors;
   };
+  console.log(`enrolleeEmails`, enrolleeEmails);
   return (
     <Form
       onSubmit={async (data) => {
-        console.log('data', data);
-        await writeBenchPressData(data);
-        fetch(
-          'https://us-central1-ebs-performance.cloudfunctions.net/helloWorld',
-          { method: 'POST' }
-        );
+        const benchPress = await writeBenchPressData(data);
+        await localStorage.setItem('bid', benchPress.id);
+        window.location = 'https://buy.stripe.com/test_8wM15m55FdHZ0DK3cc';
       }}
       validate={validate}
     >

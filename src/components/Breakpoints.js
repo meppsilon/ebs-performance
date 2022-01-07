@@ -24,7 +24,7 @@ const formatMediaQuery = (query) => {
 };
 
 const propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.func.isRequired,
   breakpoints: PropTypes.array,
   updateSettings: PropTypes.bool,
   settings: PropTypes.object,
@@ -43,7 +43,6 @@ class Breakpoints extends Component {
 
   componentDidMount() {
     const { breakpoints } = this.props;
-    console.log('break points');
     if (breakpoints) {
       const sortedBreakpointList = breakpoints.sort(
         (a, b) => a.breakpoint - b.breakpoint
@@ -124,7 +123,6 @@ class Breakpoints extends Component {
       ...settings,
     };
     const { children } = this.props;
-    console.log('breakpoints');
     const newChildren = children(newProps);
     return newChildren;
   }

@@ -37,7 +37,6 @@ const Navbar = class extends React.Component {
   render() {
     const { smallest } = this.props;
     const { open } = this.state;
-    console.log(`smallest`, smallest);
     return (
       <nav
         className="bg-ebsBlack relative z-30 py-2 px-4"
