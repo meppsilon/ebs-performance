@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+const convertToKebab = (str) => str.toLowerCase().replace(' ', '-');
+
 const SmallMenu = ({ sections, hideMenu }) => (
   <div className="font-semibold text-sm">
     {sections.map((title, i) => (
       <Link
         className="text-white pr-2 block text-center menu-item cursor-pointer"
-        key={`section-${title.toLowerCase()}-${i}`}
+        key={`section-${convertToKebab(title)}-${i}`}
         onClick={hideMenu}
-        to={`/${title.toLowerCase()}`}
+        to={`/${convertToKebab(title)}`}
       >
         {title}
       </Link>

@@ -63,6 +63,9 @@ const Navbar = class extends React.Component {
                 <Link className="navbar-item flex items-center" to="/contact">
                   Contact
                 </Link> */}
+                <Link className="navbar-item flex items-center" to="/bench-press">
+                  Bench Press Contest
+                </Link>
                 <a
                   href="https://www.instagram.com/ebs.performance"
                   className="flex items-center mx-4 text-xl"
@@ -84,7 +87,7 @@ const Navbar = class extends React.Component {
         {open && (
           <SmallMenu
             // sections={['About', 'Contact']}
-            sections={[]}
+            sections={['Bench Press']}
             hideMenu={() => this.setState({ open: false })}
           />
         )}

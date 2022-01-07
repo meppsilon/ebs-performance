@@ -53,6 +53,12 @@ const Footer = class extends React.Component {
               >
                 Contact
               </Link> */}
+               <Link
+                className="mb-3 hover:underline font-semibold"
+                to="/bench-press"
+              >
+                Bench Press Contest
+              </Link>
             </div>
           </div>
           <div className="mb-6">

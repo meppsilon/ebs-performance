@@ -13,10 +13,10 @@ const BenchPress = () => {
         <h2 className="text-xl text-white font-semibold mb-4">Additional Details</h2>
         <ul className="text-white list-disc list-inside">
           <li>
-            School ID is required at check in the day of event.
+            School ID is required at check-in on the day of the event.
           </li>
           <li>
-            All participants will weighed at check in.
+            All participants will be weighed at check-in.
           </li>
           <li>
             Athletes will be competing in 5 categories by weight:
