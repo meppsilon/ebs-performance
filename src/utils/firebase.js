@@ -38,6 +38,5 @@ export async function getBenchPressData() {
   const db = getDatabase(app);
   const benchPressListRef = ref(db, 'benchPress');
   const snapshot = await get(benchPressListRef);
-  console.log(`snapshot`, snapshot)
   return Object.values(snapshot.val());
 }

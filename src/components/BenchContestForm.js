@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import Input from './Input';
 import Select from './Select';
@@ -46,9 +46,9 @@ const BenchContestForm = () => {
     }
     return errors;
   };
-  console.log(`enrolleeEmails`, enrolleeEmails);
   return (
-    <Form
+    <Fragment>
+      <Form
       onSubmit={async (data) => {
         const benchPress = await writeBenchPressData(data);
         await localStorage.setItem('bid', benchPress.id);
@@ -57,7 +57,7 @@ const BenchContestForm = () => {
       validate={validate}
     >
       {(props) => (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} className="mb-6">
           <div className="flex flex-wrap -mx-4 mb-4">
             <div className="mb-4 px-4 w-full md:w-1/2">
               <Field
@@ -144,6 +144,7 @@ const BenchContestForm = () => {
         </form>
       )}
     </Form>
+    </Fragment>
   );
 };
 
