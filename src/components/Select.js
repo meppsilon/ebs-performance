@@ -1,7 +1,14 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const Select = ({ input, meta, label, containerClassName }) => (
+const Select = ({
+  input,
+  meta,
+  label,
+  containerClassName,
+  options,
+  errorSide,
+}) => (
   <div className={containerClassName}>
     <div className="mb-2 text-white font-semibold">{label}</div>
     <select
@@ -15,16 +22,15 @@ const Select = ({ input, meta, label, containerClassName }) => (
         }
       )}
     >
-      <option />
-      <option value="22">'22</option>
-      <option value="23">'23</option>
-      <option value="24">'24</option>
-      <option value="25">'25</option>
-      <option value="26">'26</option>
+      {options}
     </select>
-    {meta.error && meta.touched && (
-      <span className="text-red-600 text-center ml-2">{meta.error}</span>
-    )}
+    {meta.error &&
+      meta.touched &&
+      (errorSide ? (
+        <span className="text-red-600 text-center ml-2">{meta.error}</span>
+      ) : (
+        <div className="text-red-600 mt-1">{meta.error}</div>
+      ))}
   </div>
 );
 

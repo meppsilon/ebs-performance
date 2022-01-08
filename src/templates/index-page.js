@@ -2,22 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
-import event from '../img/event.jpg';
+import event from '../img/bench-press.jpg';
 
 import Layout from '../components/Layout';
-// import Features from "../components/Features";
-// import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from '../components/FullWidthImage';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
 }) => {
   const heroImage = getImage(image) || image;
 
@@ -42,7 +34,7 @@ export const IndexPageTemplate = ({
               Bench Press Contest
             </h2>
             <div className="text-white mb-1">March 5, 2022</div>
-            <div className="text-white mb-3">Starts at 9am</div>
+            <div className="text-white mb-3">Registration starts at 9am</div>
             <Link
               to="/bench-press"
               className="btn-primary"
