@@ -12,7 +12,9 @@ const BenchContestForm = () => {
   useEffect(() => {
     const getBenchPressWrapper = async () => {
       const benchPressEnrollees = await getBenchPressData();
-      const emails = benchPressEnrollees.map((e) => e.email);
+      const emails = benchPressEnrollees
+        .filter((e) => e.paid)
+        .map((e) => e.email);
       setEnrolleeEmails(emails);
     };
     getBenchPressWrapper();
