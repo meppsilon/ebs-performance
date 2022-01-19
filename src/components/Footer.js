@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 
 import logo from '../img/EBSprimarylogo.png';
+import americanBBLogo from '../img/american-barbell-logo.png';
+import cuirimLogo from '../img/cuirim-logo.jpg';
 
 const Footer = class extends React.Component {
   render() {
@@ -62,14 +64,21 @@ const Footer = class extends React.Component {
             </div>
           </div>
           <div className="mb-6">
+            <div className="text-lg font-bold uppercase mb-5">Partners</div>
+            <div className="flex flex-wrap">
+            <div className="mb-4"><img src={cuirimLogo} className="h-16" /></div>
+            <div className="mb-4 ml-6"><img src={americanBBLogo} className="h-16" /></div>
+            </div>
+          </div>
+          <div className="mb-6">
             <a
               href="https://www.instagram.com/ebs.performance"
               className="flex items-center text-xl mr-3"
             >
-              <i className="fa fa-instagram text-white" aria-hidden="true" />
+              <i className="fab fa-instagram text-white" aria-hidden="true" />
             </a>
           </div>
-          <div className="text-sm font-light">© 2021, EBS Performance, LLC</div>
+          <div className="text-sm font-light">© 2022, EBS Performance, LLC</div>
         </div>
       </footer>
     );

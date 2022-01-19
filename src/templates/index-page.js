@@ -6,6 +6,7 @@ import event from '../img/bench-press.jpg';
 
 import Layout from '../components/Layout';
 import FullWidthImage from '../components/FullWidthImage';
+import WhatWeOffer from '../components/WhatWeOffer';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -44,6 +45,7 @@ export const IndexPageTemplate = ({
           </div>
         </div>
       </section>
+      <WhatWeOffer />
     </div>
   );
 };

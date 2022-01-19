@@ -20,7 +20,7 @@ const SmallMenu = ({ sections, hideMenu }) => (
       className="text-white pr-2 block text-center menu-item cursor-pointer"
     >
       <i
-        className="fa fa-instagram text-white"
+        className="fab fa-instagram text-white"
         aria-hidden="true"
       />
       {' '}

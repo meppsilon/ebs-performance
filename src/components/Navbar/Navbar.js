@@ -71,7 +71,7 @@ const Navbar = class extends React.Component {
                   className="flex items-center mx-4 text-xl"
                 >
                   <i
-                    className="fa fa-instagram text-white"
+                    className="fab fa-instagram text-white"
                     aria-hidden="true"
                   />
                 </a>

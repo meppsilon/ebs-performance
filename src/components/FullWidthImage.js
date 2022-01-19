@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { GatsbyImage } from "gatsby-plugin-image";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 export default function FullWidthImage(props) {
   const {
@@ -8,7 +8,7 @@ export default function FullWidthImage(props) {
     img,
     title,
     subheading,
-    imgPosition = "50% 50%",
+    imgPosition = '50% 50%',
   } = props;
 
   return (
@@ -16,8 +16,8 @@ export default function FullWidthImage(props) {
       <div
         className="margin-top-0"
         style={{
-          display: "grid",
-          alignItems: "center",
+          display: 'grid',
+          alignItems: 'center',
         }}
       >
         {img?.url ? (
@@ -26,16 +26,16 @@ export default function FullWidthImage(props) {
             objectFit="cover"
             objectPosition={imgPosition}
             style={{
-              gridArea: "1/1",
+              gridArea: '1/1',
               // You can set a maximum height for the image, if you wish.
               height: height,
-              width: "100%",
+              width: '100%',
             }}
             // You can optionally force an aspect ratio for the generated image
             aspectratio={3 / 1}
             // This is a presentational image, so the alt should be an empty string
             alt=""
-            formats={["auto", "webp", "avif"]}
+            formats={['auto', 'webp', 'avif']}
           />
         ) : (
           <GatsbyImage
@@ -43,7 +43,7 @@ export default function FullWidthImage(props) {
             objectFit="cover"
             objectPosition={imgPosition}
             style={{
-              gridArea: "1/1",
+              gridArea: '1/1',
               // You can set a maximum height for the image, if you wish.
               maxHeight: height,
             }}
@@ -52,54 +52,49 @@ export default function FullWidthImage(props) {
             aspectratio={3 / 1}
             // This is a presentational image, so the alt should be an empty string
             alt=""
-            formats={["auto", "webp", "avif"]}
+            formats={['auto', 'webp', 'avif']}
           />
         )}
-        {(title || subheading) && (
-          <div
+        <div
+          style={{
+            // By using the same grid area for both, they are stacked on top of each other
+            gridArea: '1/1',
+            position: 'relative',
+            // This centers the other elements inside the hero component
+            placeItems: 'center',
+            display: 'grid',
+          }}
+        >
+          {/* Any content here will be centered in the component */}
+          <h1
+            className="font-bold text-xl sm:text-2xl md:text-4xl"
             style={{
-              // By using the same grid area for both, they are stacked on top of each other
-              gridArea: "1/1",
-              position: "relative",
-              // This centers the other elements inside the hero component
-              placeItems: "center",
-              display: "grid",
+              boxShadow: '#BD0D1E 0.5rem 0px 0px, #BD0D1E -0.5rem 0px 0px',
+              backgroundColor: '#BD0D1E',
+              color: 'white',
+              lineHeight: '1',
+              padding: '0.25em',
             }}
           >
-            {/* Any content here will be centered in the component */}
-            {title && (
-              <h1
-                className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-                style={{
-                  boxShadow:
-                    "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-                  backgroundColor: "rgb(255, 68, 0)",
-                  color: "white",
-                  lineHeight: "1",
-                  padding: "0.25em",
-                }}
-              >
-                {title}
-              </h1>
-            )}
-            {subheading && (
-              <h3
-                className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-                style={{
-                  boxShadow:
-                    "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-                  backgroundColor: "rgb(255, 68, 0)",
-                  color: "white",
-                  lineHeight: "1",
-                  padding: "0.25rem",
-                  marginTop: "0.5rem",
-                }}
-              >
-                {subheading}
-              </h3>
-            )}
-          </div>
-        )}
+            EBS Performance + Fitness
+          </h1>
+          {/* <h3
+            className="text-bold text-md sm:text-lg md:text-2xl"
+            style={{
+              boxShadow: '#BD0D1E 0.5rem 0px 0px, #BD0D1E -0.5rem 0px 0px',
+              backgroundColor: '#BD0D1E',
+              color: 'white',
+              lineHeight: '1',
+              padding: '0.25rem',
+              marginTop: '0.5rem',
+              marginLeft: '1rem',
+              marginRight: '1rem',
+            }}
+          >
+            In life, there are those who make excuses and those who get it done.
+            We only live once &#8212; get it done.
+          </h3> */}
+        </div>
       </div>
     </React.Fragment>
   );
