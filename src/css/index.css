@@ -14,5 +14,21 @@ input {
   @apply text-white bg-primary px-4 py-2 rounded hover:bg-primaryDark;
 }
 
+h1 {
+  @apply text-2xl text-white font-bold mb-8
+}
+
+h2 {
+  @apply text-xl text-white font-semibold mb-8
+}
+
+h3 {
+  @apply text-lg text-white font-semibold mb-6
+}
+
+p {
+  @apply mb-10
+}
+
 @tailwind utilities;
 

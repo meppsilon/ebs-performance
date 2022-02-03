@@ -1,25 +1,27 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
+import FullWidthImage from '../components/FullWidthImage';
+import ownersImage from '../img/ebs-owners.jpg';
 
 // eslint-disable-next-line
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
+  console.log('owners image', ownersImage);
+
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
+    <section className="bg-ebsBlack text-white">
+      <div className="mt-12 text-center mx-auto">
+        <h1 className="text-3xl mb-10">{title}</h1>
+        <div className="section mx-6 sm:mx-auto sm:w-3/4 md:flex md:justify-between md:text-left md:items-start">
+          <img
+            src={ownersImage}
+            className="inline-block owners-img max-w-lg md:w-1/2 mb-10 md:mb-0 object-contain"
+          />
+          <PageContent className="content max-w-lg md:ml-10" content={content} />
         </div>
       </div>
     </section>
@@ -36,7 +38,7 @@ const AboutPage = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
+    <Layout className="bg-ebsBlack">
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}

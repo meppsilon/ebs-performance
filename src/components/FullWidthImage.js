@@ -11,6 +11,8 @@ export default function FullWidthImage(props) {
     imgPosition = '50% 50%',
   } = props;
 
+  console.log('src', img)
+
   return (
     <React.Fragment>
       <div
@@ -22,7 +24,7 @@ export default function FullWidthImage(props) {
       >
         {img?.url ? (
           <img
-            src={img}
+            src={img.url}
             objectFit="cover"
             objectPosition={imgPosition}
             style={{
@@ -66,7 +68,7 @@ export default function FullWidthImage(props) {
           }}
         >
           {/* Any content here will be centered in the component */}
-          <h1
+          {title && <h1
             className="font-bold text-xl sm:text-2xl md:text-4xl"
             style={{
               boxShadow: '#BD0D1E 0.5rem 0px 0px, #BD0D1E -0.5rem 0px 0px',
@@ -76,8 +78,8 @@ export default function FullWidthImage(props) {
               padding: '0.25em',
             }}
           >
-            EBS Performance + Fitness
-          </h1>
+            {title}
+          </h1>}
           {/* <h3
             className="text-bold text-md sm:text-lg md:text-2xl"
             style={{

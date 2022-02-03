@@ -16,7 +16,7 @@ export const IndexPageTemplate = ({
 
   return (
     <div>
-      <FullWidthImage img={heroImage} />
+      <FullWidthImage img={heroImage} title="EBS Performance + Fitness" />
       <section
         className="md:px-16 md:py-16 px-4 py-8 bg-secondary"
         style={{
