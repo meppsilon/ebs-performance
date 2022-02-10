@@ -4,7 +4,7 @@ import Input from './Input';
 import Select from './Select';
 import { getBenchPressData, writeBenchPressData } from '../utils/firebase';
 
-const prodLink = 'https://buy.stripe.com/cN24jg9AydRH9uo3cc';
+const prodLink = 'https://buy.stripe.com/00gdTQbIG28ZbCw8wx';
 const testLink = 'https://buy.stripe.com/test_8wM15m55FdHZ0DK3cc';
 
 const BenchContestForm = () => {
