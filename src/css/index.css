@@ -30,5 +30,13 @@ p {
   @apply mb-10
 }
 
+.react-calendar__tile--active {
+  background-color: #006edc;
+}
+
+.link {
+  @apply underline hover:text-gray-300;
+}
+
 @tailwind utilities;
 

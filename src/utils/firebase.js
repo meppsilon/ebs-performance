@@ -15,6 +15,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+// Bench press contest
 export async function writeBenchPressData(benchPressData) {
   const db = getDatabase(app);
   const benchPressListRef = push(ref(db, 'benchPress'));
@@ -39,4 +40,24 @@ export async function getBenchPressData() {
   const benchPressListRef = ref(db, 'benchPress');
   const snapshot = await get(benchPressListRef);
   return Object.values(snapshot.val());
+}
+
+// Turf space
+export async function writeTurfSpaceData(turfSpace) {
+  const db = getDatabase(app);
+  const turfSpaceListRef = push(ref(db, 'turfSpace'));
+  const modifiedTurfSpace = {
+    ...turfSpace,
+    id: turfSpaceListRef.key,
+    paid: false,
+    created: Date.now(),
+  };
+  await set(turfSpaceListRef, modifiedTurfSpace);
+  return modifiedTurfSpace;
+}
+
+export async function updateTurfSpaceData(tid, updateData) {
+  const db = getDatabase(app);
+  const turfSpaceListRef = ref(db, `turfSpace/${tid}`);
+  await update(turfSpaceListRef, updateData);
 }
