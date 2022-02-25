@@ -17,6 +17,9 @@ const TurfSpaceForm = ({ date }) => {
     if (!values.email) {
       errors.email = 'Required!';
     }
+    if (!values.phone) {
+      errors.phone = 'Required!';
+    }
     return errors;
   };
   return (
