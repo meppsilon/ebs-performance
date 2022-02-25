@@ -58,13 +58,23 @@ const TurfSpaceForm = ({ date }) => {
                 containerClassName="w-full"
               />
             </div>
-            <div className="mb-4 px-4 w-full max-w-md">
+            <div className="mb-4 px-4 w-full md:w-1/2">
               <Field
                 name="email"
                 placeholder="Email"
                 label="Email"
                 component={Input}
                 type="email"
+                containerClassName="w-full"
+              />
+            </div>
+            <div className="mb-4 px-4 w-full md:w-1/2">
+              <Field
+                name="phone"
+                placeholder="Phone number"
+                label="Phone number"
+                component={Input}
+                type="text"
                 containerClassName="w-full"
               />
             </div>

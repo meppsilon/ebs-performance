@@ -66,7 +66,7 @@ const TurfSpace = () => {
               Rent out time to use the turf space. Select a time below, provide
               your details, and the turf is yours to use.
             </div>
-            <h2>Choose a date & time</h2>
+            <h2>Choose a date &amp; time</h2>
             <div className="sm:flex flex-wrap sm:space-x-12 space-x-0">
               <div className="text-ebsBlack">
                 <h3 className="text-white">Available dates</h3>
