@@ -3,7 +3,7 @@ import { Form, Field } from 'react-final-form';
 import { writeTurfSpaceData } from '../utils/firebase';
 import Input from './Input';
 
-const testLink = 'https://buy.stripe.com/test_7sIaFW55FfQ786c7st'
+const testLink = 'https://buy.stripe.com/test_7sIaFW55FfQ786c7st';
 
 const TurfSpaceForm = ({ date }) => {
   const validate = (values) => {
@@ -71,7 +71,7 @@ const TurfSpaceForm = ({ date }) => {
           </div>
           <div className="flex justify-end">
             <button type="submit" className="btn-primary">
-              Submit
+              Checkout
             </button>
           </div>
         </form>
