@@ -62,7 +62,6 @@ export async function updateTurfSpaceData(tid, updateData) {
   await update(turfSpaceListRef, updateData);
 }
 
-
 export async function getTurfSpaceData() {
   const db = getDatabase(app);
   const turfSpaceListRef = ref(db, 'turfSpace');
