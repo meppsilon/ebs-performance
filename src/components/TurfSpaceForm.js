@@ -28,7 +28,7 @@ const TurfSpaceForm = ({ date }) => {
         console.log('data', data);
         console.log('date', date);
         // add data to firebase
-        const turfSpace = await writeTurfSpaceData({ ...data, date });
+        const turfSpace = await writeTurfSpaceData({ ...data, date: date.getTime() });
         console.log('turfSpace', turfSpace);
         await localStorage.setItem('tid', turfSpace.id);
         // window.location = window.location.host.startsWith('localhost')

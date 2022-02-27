@@ -1,10 +1,11 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import range from 'lodash/range';
 import React from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import Layout from '../../components/Layout';
 import TurfSpaceForm from '../../components/TurfSpaceForm';
+import { getTurfSpaceData } from '../../utils/firebase';
 
 const formatTime = (time) => {
   const hourModulo = time % 12;
@@ -18,23 +19,49 @@ const findTimeRange = (currentHour) => {
   return fullHourRange.filter((hour) => hour > currentHour);
 };
 
+const isSelectedDate = (date, selectedDate) => {
+  if (!date || !selectedDate) return;
+  return (
+    date.getDate() === selectedDate.getDate() &&
+    date.getMonth() === selectedDate.getMonth() &&
+    date.getFullYear() === selectedDate.getFullYear()
+  );
+};
+
 const isToday = (date) => {
   if (!date) return;
+  if (typeof date !== 'object') {
+    date = new Date(date);
+  }
   const today = new Date();
-  return (
-    date.getDate() === today.getDate() &&
-    date.getMonth() === today.getMonth() &&
-    date.getFullYear() === today.getFullYear()
-  );
+  return isSelectedDate(date, today);
 };
 
 const TurfSpace = () => {
   const today = new Date();
   const [date, setDate] = useState(today);
   const [time, setTime] = useState();
+  const [existingTimes, setExistingTimes] = useState([]);
+  console.log('existingTimes', existingTimes);
 
   const currentHour = today.getHours();
-  const timeRange = findTimeRange(isToday(date) ? currentHour : 0);
+  const baseTimeRange = findTimeRange(isToday(date) ? currentHour : 0);
+  const selectedDayExistingTimes = existingTimes
+    .filter((t) => isSelectedDate(new Date(t), date))
+    .map((t) => new Date(t).getHours());
+  console.log('currentDayExistingTimes', selectedDayExistingTimes);
+  const timeRange = baseTimeRange.filter((hour) => !selectedDayExistingTimes.includes(hour));
+
+  useEffect(() => {
+    const getTurfSpaceWrapper = async () => {
+      const turfSpaceRegisters = await getTurfSpaceData();
+      const dates = turfSpaceRegisters
+        .filter((e) => e.paid)
+        .map((e) => e.date);
+      setExistingTimes(dates);
+    };
+    getTurfSpaceWrapper();
+  }, []);
 
   return (
     <Layout className="bg-ebsBlack text-white">
@@ -82,7 +109,8 @@ const TurfSpace = () => {
                     // current date has passed
                     const startOfToday = today.setHours(0, 0, 0, 0);
                     const currentDate = new Date(startOfToday);
-                    return date < currentDate;
+                    const beforeCurrent = date < currentDate;
+                    return beforeCurrent;
                   }}
                 />
               </div>

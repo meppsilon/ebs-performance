@@ -61,3 +61,11 @@ export async function updateTurfSpaceData(tid, updateData) {
   const turfSpaceListRef = ref(db, `turfSpace/${tid}`);
   await update(turfSpaceListRef, updateData);
 }
+
+
+export async function getTurfSpaceData() {
+  const db = getDatabase(app);
+  const turfSpaceListRef = ref(db, 'turfSpace');
+  const snapshot = await get(turfSpaceListRef);
+  return Object.values(snapshot.val());
+}
