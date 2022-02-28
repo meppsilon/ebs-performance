@@ -99,12 +99,8 @@ const TurfSpace = () => {
                   onChange={(date) => {
                     setDate(date);
                   }}
-                  activeStartDate={today}
                   value={date}
                   tileDisabled={({ date }) => {
-                    // disabled if:
-                    // current date already scheduled
-                    // current date has passed
                     const startOfToday = today.setHours(0, 0, 0, 0);
                     const currentDate = new Date(startOfToday);
                     const beforeCurrent = date < currentDate;
