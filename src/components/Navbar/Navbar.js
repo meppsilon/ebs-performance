@@ -90,7 +90,7 @@ const Navbar = class extends React.Component {
         {open && (
           <SmallMenu
             // sections={['About', 'Contact']}
-            sections={['Bench Press']}
+            sections={[{ title: 'Reserve Turf', link: 'turf-space' }]}
             hideMenu={() => this.setState({ open: false })}
           />
         )}

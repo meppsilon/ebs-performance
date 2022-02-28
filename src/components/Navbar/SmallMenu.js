@@ -5,14 +5,14 @@ const convertToKebab = (str) => str.toLowerCase().replace(' ', '-');
 
 const SmallMenu = ({ sections, hideMenu }) => (
   <div className="font-semibold text-sm">
-    {sections.map((title, i) => (
+    {sections.map((section, i) => (
       <Link
         className="text-white pr-2 block text-center menu-item cursor-pointer"
-        key={`section-${convertToKebab(title)}-${i}`}
+        key={`section-${convertToKebab(section.title)}-${i}`}
         onClick={hideMenu}
-        to={`/${convertToKebab(title)}`}
+        to={`/${section.link}`}
       >
-        {title}
+        {section.title}
       </Link>
     ))}
     <a
