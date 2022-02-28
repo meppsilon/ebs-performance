@@ -34,7 +34,7 @@ p {
   background-color: #006edc;
 }
 
-.link {
+a, .link {
   @apply underline hover:text-gray-300;
 }
 

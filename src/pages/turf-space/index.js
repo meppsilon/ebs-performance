@@ -15,7 +15,7 @@ const formatTime = (time) => {
 };
 
 const findTimeRange = (currentHour) => {
-  const fullHourRange = range(8, 20);
+  const fullHourRange = range(8, 21);
   return fullHourRange.filter((hour) => hour > currentHour);
 };
 

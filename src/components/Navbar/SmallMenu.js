@@ -7,7 +7,7 @@ const SmallMenu = ({ sections, hideMenu }) => (
   <div className="font-semibold text-sm">
     {sections.map((section, i) => (
       <Link
-        className="text-white pr-2 block text-center menu-item cursor-pointer"
+        className="text-white pr-2 block text-center menu-item cursor-pointer no-underline"
         key={`section-${convertToKebab(section.title)}-${i}`}
         onClick={hideMenu}
         to={`/${section.link}`}
@@ -17,7 +17,7 @@ const SmallMenu = ({ sections, hideMenu }) => (
     ))}
     <a
       href="https://www.instagram.com/ebs.performance"
-      className="text-white pr-2 block text-center menu-item cursor-pointer"
+      className="text-white pr-2 block text-center menu-item cursor-pointer no-underline"
     >
       <i
         className="fab fa-instagram text-white"

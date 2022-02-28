@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import ebsTurf from '../img/ebs-turf.jpg';
 
 const WhatWeOffer = () => (
@@ -54,7 +55,7 @@ const WhatWeOffer = () => (
           <div className="w-12 text-center" style={{ minWidth: '3rem' }}>
             <i className="fas fa-road" />
           </div>
-          <div className="ml-6">40 yards of outdoor field turf</div>
+          <div className="ml-6">40 yards of outdoor field turf&nbsp;&mdash;&nbsp;<Link className="font-normal" to="/turf-space">reserve here</Link></div>
         </div>
         <div className="w-full px-5 flex items-center text-lg my-4 font-light">
           <div className="w-12 text-center" style={{ minWidth: '3rem' }}>

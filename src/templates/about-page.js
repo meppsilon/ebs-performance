@@ -10,18 +10,16 @@ import ownersImage from '../img/ebs-owners.jpg';
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
-  console.log('owners image', ownersImage);
-
   return (
     <section className="bg-ebsBlack text-white">
-      <div className="mt-12 text-center mx-auto">
-        <h1 className="text-3xl mb-10">{title}</h1>
+      <div className="mt-12 text-left md:text-center mx-auto">
+        <h1 className="text-3xl mb-10 text-center">{title}</h1>
         <div className="section mx-6 sm:mx-auto sm:w-3/4 md:flex md:justify-between md:text-left md:items-start">
           <img
             src={ownersImage}
-            className="inline-block owners-img max-w-lg md:w-1/2 mb-10 md:mb-0 object-contain"
+            className="inline-block owners-img md:max-w-lg md:w-1/2 mb-10 md:mb-0 object-contain w-full"
           />
-          <PageContent className="content max-w-lg md:ml-10" content={content} />
+          <PageContent className="content max-w-lg md:ml-16" content={content} />
         </div>
       </div>
     </section>
