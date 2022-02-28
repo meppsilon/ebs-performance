@@ -1,9 +1,26 @@
+import { navigate } from 'gatsby';
 import React from 'react';
 import { Form, Field } from 'react-final-form';
-import { writeTurfSpaceData } from '../utils/firebase';
+import { writeTurfSpaceData, updateTurfSpaceData } from '../utils/firebase';
 import Input from './Input';
 
-const testLink = 'https://buy.stripe.com/test_7sIaFW55FfQ786c7st';
+const allOff = ['all off', 'alloff', 'all-off'];
+const halfOff = ['half off', 'halfoff', 'half-off'];
+
+const fullPriceLink = {
+  test: 'https://buy.stripe.com/test_7sIaFW55FfQ786c7st',
+  prod: '',
+};
+const halfPriceLink = {
+  test: 'https://buy.stripe.com/test_bIY4hygOn1Zh0DKeUW',
+  prod: '',
+};
+
+const findLink = (coupon) => {
+  const allEnvLink = halfOff.includes(coupon) ? halfPriceLink : fullPriceLink;
+  const env = window.location.host.startsWith('localhost') ? 'test' : 'prod';
+  return allEnvLink[env];
+};
 
 const TurfSpaceForm = ({ date }) => {
   const validate = (values) => {
@@ -27,14 +44,19 @@ const TurfSpaceForm = ({ date }) => {
       onSubmit={async (data) => {
         console.log('data', data);
         console.log('date', date);
+        const coupon = data.discount?.toLowerCase();
         // add data to firebase
-        const turfSpace = await writeTurfSpaceData({ ...data, date: date.getTime() });
-        console.log('turfSpace', turfSpace);
+        const turfSpace = await writeTurfSpaceData({
+          ...data,
+          date: date.getTime(),
+        });
         await localStorage.setItem('tid', turfSpace.id);
-        // window.location = window.location.host.startsWith('localhost')
-        //   ? testLink
-        //   : prodLink;
-        window.location = testLink;
+        if (allOff.includes(coupon)) {
+          updateTurfSpaceData(turfSpace.id, { paid: true });
+          navigate('/turf-space/success');
+        } else {
+          window.location = findLink(data.discount?.toLowerCase());
+        }
       }}
       validate={validate}
     >
@@ -81,6 +103,16 @@ const TurfSpaceForm = ({ date }) => {
                 containerClassName="w-full"
               />
             </div>
+          </div>
+          <div className="mb-6">
+            <Field
+              name="discount"
+              placeholder="Enter code"
+              label="Discount code"
+              component={Input}
+              type="text"
+              containerClassName="w-full"
+            />
           </div>
           <div className="flex justify-end">
             <button type="submit" className="btn-primary">
