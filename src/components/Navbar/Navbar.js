@@ -63,8 +63,11 @@ const Navbar = class extends React.Component {
                 <Link className="navbar-item flex items-center" to="/contact">
                   Contact
                 </Link> */}
-                <Link className="navbar-item flex items-center" to="/bench-press">
+                {/* <Link className="navbar-item flex items-center" to="/bench-press">
                   Bench Press Contest
+                </Link> */}
+                <Link className="navbar-item flex items-center" to="/turf-space">
+                  Reserve Turf
                 </Link>
                 <a
                   href="https://www.instagram.com/ebs.performance"

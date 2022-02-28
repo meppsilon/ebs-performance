@@ -9,11 +9,11 @@ const halfOff = ['half off', 'halfoff', 'half-off'];
 
 const fullPriceLink = {
   test: 'https://buy.stripe.com/test_7sIaFW55FfQ786c7st',
-  prod: '',
+  prod: 'https://buy.stripe.com/7sI1744ge00R5e8bIK',
 };
 const halfPriceLink = {
   test: 'https://buy.stripe.com/test_bIY4hygOn1Zh0DKeUW',
-  prod: '',
+  prod: 'https://buy.stripe.com/5kA5nk1424h7gWQ5kn',
 };
 
 const findLink = (coupon) => {

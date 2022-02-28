@@ -17,7 +17,7 @@ export const IndexPageTemplate = ({
   return (
     <div>
       <FullWidthImage img={heroImage} title="EBS Performance + Fitness" />
-      <section
+      {/* <section
         className="md:px-16 md:py-16 px-4 py-8 bg-secondary"
         style={{
           backgroundImage: `linear-gradient(to bottom right, #6D6D6D, #d3d3d3)`,
@@ -44,7 +44,7 @@ export const IndexPageTemplate = ({
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
       <WhatWeOffer />
     </div>
   );
