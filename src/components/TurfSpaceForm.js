@@ -42,8 +42,6 @@ const TurfSpaceForm = ({ date }) => {
   return (
     <Form
       onSubmit={async (data) => {
-        console.log('data', data);
-        console.log('date', date);
         const coupon = data.discount?.toLowerCase();
         // add data to firebase
         const turfSpace = await writeTurfSpaceData({

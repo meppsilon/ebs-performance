@@ -42,14 +42,12 @@ const TurfSpace = () => {
   const [date, setDate] = useState(today);
   const [time, setTime] = useState();
   const [existingTimes, setExistingTimes] = useState([]);
-  console.log('existingTimes', existingTimes);
 
   const currentHour = today.getHours();
   const baseTimeRange = findTimeRange(isToday(date) ? currentHour : 0);
   const selectedDayExistingTimes = existingTimes
     .filter((t) => isSelectedDate(new Date(t), date))
     .map((t) => new Date(t).getHours());
-  console.log('currentDayExistingTimes', selectedDayExistingTimes);
   const timeRange = baseTimeRange.filter((hour) => !selectedDayExistingTimes.includes(hour));
 
   useEffect(() => {
