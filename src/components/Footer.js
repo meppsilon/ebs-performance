@@ -76,7 +76,7 @@ const Footer = class extends React.Component {
           <div className="mb-6">
             <a
               href="https://www.instagram.com/ebs.performance"
-              className="flex items-center text-xl mr-3"
+              className="flex items-center text-xl mr-3 no-underline"
             >
               <i className="fab fa-instagram text-white" aria-hidden="true" />
             </a>
