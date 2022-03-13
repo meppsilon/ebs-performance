@@ -126,7 +126,7 @@ const TurfSpace = () => {
                     ))}
                   </div>
                 ) : (
-                  <div>No available times today</div>
+                  <div className="flex flex-col w-full space-y-2 w-full">No available times today</div>
                 )}
               </div>
             </div>
