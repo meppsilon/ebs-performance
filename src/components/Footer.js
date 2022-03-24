@@ -52,6 +52,9 @@ const Footer = class extends React.Component {
               <Link className="mb-3 font-semibold" to="/about">
                 About
               </Link>
+              <Link className="mb-3 font-semibold" to="/pictures">
+                Pictures
+              </Link>
               {/* <Link
                 className="mb-3 hover:underline font-semibold"
                 to="/contact"
