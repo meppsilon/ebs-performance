@@ -38,5 +38,9 @@ a, .link {
   @apply underline hover:text-gray-300;
 }
 
+img {
+  @apply inline-block
+}
+
 @tailwind utilities;
 
