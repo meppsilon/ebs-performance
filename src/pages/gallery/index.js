@@ -17,7 +17,7 @@ const images = range(1, 16).map((x) => ({
   })
 }));
 
-const Pictures = () => {
+const PhotoGallery = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -57,4 +57,4 @@ const Pictures = () => {
   );
 };
 
-export default Pictures;
+export default PhotoGallery;
