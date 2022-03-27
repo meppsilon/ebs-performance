@@ -7,6 +7,13 @@ import Layout from '../../components/Layout';
 import TurfSpaceForm from '../../components/TurfSpaceForm';
 import { getTurfSpaceData } from '../../utils/firebase';
 
+const isApril9th = (date) => {
+  if (!date) return false;
+  const isApril = date.getMonth() === 3
+  const is9th = date.getDate() === 9
+  return isApril && is9th;
+}
+
 const formatTime = (time) => {
   const hourModulo = time % 12;
   const hourTime = hourModulo === 0 ? 12 : hourModulo;
@@ -104,7 +111,7 @@ const TurfSpace = () => {
                     const startOfToday = today.setHours(0, 0, 0, 0);
                     const currentDate = new Date(startOfToday);
                     const beforeCurrent = date < currentDate;
-                    return beforeCurrent;
+                    return beforeCurrent || isApril9th(date);
                   }}
                 />
               </div>
