@@ -8,7 +8,7 @@ const sections = [
     id: 'about',
     title: 'About',
     content: [
-      <div>
+      <div className="mb-3">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Morbi blandit cursus
         risus at ultrices mi tempus imperdiet nulla. Lobortis feugiat vivamus at
@@ -29,7 +29,7 @@ const sections = [
     id: 'program',
     title: 'The Program',
     content: [
-      <div>
+      <div className="mb-3">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Morbi blandit cursus
         risus at ultrices mi tempus imperdiet nulla. Lobortis feugiat vivamus at
@@ -50,7 +50,7 @@ const sections = [
     id: 'facility',
     title: 'Facility',
     content: [
-      <div>
+      <div className="mb-3">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Morbi blandit cursus
         risus at ultrices mi tempus imperdiet nulla. Lobortis feugiat vivamus at
@@ -71,7 +71,7 @@ const sections = [
     id: 'rehab',
     title: 'Sports rehab',
     content: [
-      <div>
+      <div className="mb-3">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Morbi blandit cursus
         risus at ultrices mi tempus imperdiet nulla. Lobortis feugiat vivamus at

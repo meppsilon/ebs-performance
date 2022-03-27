@@ -4,15 +4,18 @@ import classNames from 'classnames';
 const CollapsibleSection = ({ title, children, isShowing, onChange }) => {
   return (
     <div
-      className={classNames('mb-5 rounded-sm border border-ebsBlack hover:border-white p-4', {
-        '!border-white': isShowing,
-      })}
+      className={classNames(
+        'mb-5 rounded-sm border border-ebsBlack hover:border-white p-4',
+        {
+          '!border-white': isShowing,
+        }
+      )}
     >
       <div
         className={classNames(
           'flex items-center cursor-pointer transition-all',
           {
-            underline: !isShowing,
+            'mb-4': isShowing,
           }
         )}
         onClick={onChange}
