@@ -1,9 +1,24 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const Input = ({ containerClassName, input, meta, placeholder, label }) => (
+const Input = ({
+  containerClassName,
+  input,
+  meta,
+  placeholder,
+  label,
+  labelClassName,
+  inputClassName,
+  labelRight = false,
+}) => (
   <div className={containerClassName}>
-    <div className="mb-2 text-white font-semibold">{label}</div>
+    {!labelRight && (
+      <div
+        className={classnames('mb-2 text-white font-semibold', labelClassName)}
+      >
+        {label}
+      </div>
+    )}
     <input
       id="default"
       className={classnames(
@@ -12,11 +27,19 @@ const Input = ({ containerClassName, input, meta, placeholder, label }) => (
           'border-red-500 text-red-600 placeholder-red-600 mb-1':
             meta.error && meta.touched,
           'border-gray-300': !meta.error || !meta.touched,
-        }
+        },
+        inputClassName
       )}
       placeholder={placeholder}
       {...input}
     />
+    {labelRight && (
+      <div
+        className={classnames('mb-2 text-white font-semibold', labelClassName)}
+      >
+        {label}
+      </div>
+    )}
     {meta.error && meta.touched && (
       <span className="text-red-600 text-center mt-2">{meta.error}</span>
     )}

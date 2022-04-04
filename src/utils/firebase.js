@@ -12,6 +12,31 @@ const firebaseConfig = {
   measurementId: 'G-J377L7Y4F9',
 };
 
+const writeData = (key) => async (data) => {
+  const db = getDatabase(app);
+  const listRef = push(ref(db, key));
+  const modifiedData = {
+    ...data,
+    id: listRef.key,
+    created: Date.now(),
+  };
+  await set(listRef, modifiedData);
+  return modifiedData;
+}
+
+const updateListData = (key) => async (id, updateData) => {
+  const db = getDatabase(app);
+  const listRef = ref(db, `${key}/${id}`);
+  await update(listRef, updateData);
+}
+
+const getData = (key) => async () => {
+  const db = getDatabase(app);
+  const listRef = ref(db, key);
+  const snapshot = await get(listRef);
+  return Object.values(snapshot.val());
+}
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
@@ -68,3 +93,10 @@ export async function getTurfSpaceData() {
   const snapshot = await get(turfSpaceListRef);
   return Object.values(snapshot.val());
 }
+
+// Registration
+export const writeRegistrationData = writeData('registrations');
+
+export const updateRegistrationData = updateListData('registrations');
+
+export const getRegistrationData = getData('registrations');
