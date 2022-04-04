@@ -11,7 +11,7 @@ const Registration = () => {
         </div>
         <div className="mb-4">
           If you are interested in becoming a trainer or regular member at EBS
-          Fitness + Performance, please fill out the form below.
+          Performance + Fitness, please fill out the form below.
         </div>
         <div className="mb-6">
           After the grand opening, we will reach out to you and explain what the
