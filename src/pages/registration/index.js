@@ -10,8 +10,8 @@ const Registration = () => {
           <h1 className="mb-0">Online Registration</h1>
         </div>
         <div className="mb-4">
-          If you are interested in becoming a trainer or regular member at EBS
-          Performance + Fitness, please fill out the form below.
+          If you are interested in becoming a trainer at EBS Performance +
+          Fitness, please fill out the form below.
         </div>
         <div className="mb-6">
           After the grand opening, we will reach out to you and explain what the
