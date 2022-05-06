@@ -62,6 +62,10 @@ const TemplateWrapper = ({ className, children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
         <script
+          src="https://widgets.mindbodyonline.com/javascripts/healcode.js"
+          type="text/javascript"
+        ></script>
+        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-412MRPNH0T"
         ></script>

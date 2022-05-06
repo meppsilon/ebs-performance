@@ -8,9 +8,7 @@ import FullWidthImage from '../components/FullWidthImage';
 import WhatWeOffer from '../components/WhatWeOffer';
 
 // eslint-disable-next-line
-export const IndexPageTemplate = ({
-  image,
-}) => {
+export const IndexPageTemplate = ({ image }) => {
   const heroImage = getImage(image) || image;
 
   return (

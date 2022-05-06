@@ -57,13 +57,28 @@ const Navbar = class extends React.Component {
               className={`navbar-menu ${this.state.navBarActiveClass} flex`}
             >
               <div className="flex">
-                <Link className="navbar-item flex items-center no-underline" to="/turf-space">
+                <Link
+                  className="navbar-item flex items-center no-underline"
+                  to="/turf-space"
+                >
                   Reserve Turf
                 </Link>
-                <Link className="navbar-item flex items-center no-underline" to="/about">
+                <a
+                  className="navbar-item flex items-center no-underline"
+                  href="/group-fit"
+                >
+                  Group Fitness
+                </a>
+                <Link
+                  className="navbar-item flex items-center no-underline"
+                  to="/about"
+                >
                   About
                 </Link>
-                <Link className="navbar-item flex items-center no-underline" to="/gallery">
+                <Link
+                  className="navbar-item flex items-center no-underline"
+                  to="/gallery"
+                >
                   Gallery
                 </Link>
                 {/* <Link className="navbar-item flex items-center" to="/contact">
@@ -92,7 +107,12 @@ const Navbar = class extends React.Component {
         </div>
         {open && (
           <SmallMenu
-            sections={[{ title: 'Reserve Turf', link: 'turf-space' }, { title: 'About', link: 'about' }, { title: 'Gallery', link: 'gallery' }]}
+            sections={[
+              { title: 'Reserve Turf', link: 'turf-space' },
+              { title: 'Group Fitness', isA: true, link: 'group-fit' },
+              { title: 'About', link: 'about' },
+              { title: 'Gallery', link: 'gallery' },
+            ]}
             hideMenu={() => this.setState({ open: false })}
           />
         )}
