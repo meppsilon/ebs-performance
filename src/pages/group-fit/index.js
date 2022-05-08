@@ -5,7 +5,7 @@ const GroupFit = () => {
   return (
     <Layout className="bg-ebsBlack">
       <div className="max-w-screen-md md:mx-auto mx-6 my-10">
-        <h1>Group Fitness Classes</h1>
+        <h1>EBS Group Fitness</h1>
         <div className="bg-white">
           <div>
             <healcode-widget
