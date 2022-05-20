@@ -94,9 +94,9 @@ export async function getTurfSpaceData() {
   return Object.values(snapshot.val());
 }
 
-// Registration
-export const writeRegistrationData = writeData('registrations');
+// Youth camp
+export const writeYouthCampData = writeData('youthCamp');
 
-export const updateRegistrationData = updateListData('registrations');
+export const updateYouthCampData = updateListData('youthCamp');
 
-export const getRegistrationData = getData('registrations');
+export const getYouthCampData = getData('youthCamp');

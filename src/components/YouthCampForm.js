@@ -1,18 +1,18 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import Input from './Input';
-import { getRegistrationData, writeRegistrationData } from '../utils/firebase';
+import { getYouthCampData, writeYouthCampData } from '../utils/firebase';
 import { navigate } from 'gatsby';
 
 const YouthCampForm = () => {
   const [enrolleeEmails, setEnrolleeEmails] = useState([]);
   useEffect(() => {
-    const getRegistrationWrapper = async () => {
-      const registrationEnrollees = await getRegistrationData();
-      const emails = registrationEnrollees.map((e) => e.email);
+    const getYouthCampWrapper = async () => {
+      const youthCampEnrollees = await getYouthCampData();
+      const emails = youthCampEnrollees.map((e) => e.email);
       setEnrolleeEmails(emails);
     };
-    getRegistrationWrapper();
+    getYouthCampWrapper();
   }, []);
   const validate = (values) => {
     const errors = {};
@@ -36,8 +36,8 @@ const YouthCampForm = () => {
     <Fragment>
       <Form
         onSubmit={async (data) => {
-          await writeRegistrationData(data);
-          navigate('/registration/success');
+          await writeYouthCampData(data);
+          navigate('/youth-camp/success');
         }}
         validate={validate}
       >
