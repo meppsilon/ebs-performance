@@ -8,9 +8,9 @@ import cuirimLogo from '../img/cuirim-logo.jpg';
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="bg-ebsBlack text-white md:px-20 md:py-12 px-6 py-4">
+      <footer className="bg-ebsBlack text-white md:px-20 px-6 py-16 md:py-12">
         <div className="max-w-screen-xl mx-auto">
-          <div className="text-center mb-6">
+          <div className="text-center mb-12">
             <img
               src={logo}
               alt="EBS Performance"

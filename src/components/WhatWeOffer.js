@@ -12,7 +12,7 @@ const WhatWeOffer = () => (
       backgroundPosition: 'center',
     }}
   >
-    <div className="md:py-16 mx-4 py-8 md:max-w-screen-lg md:mx-auto">
+    <div className="py-16 md:py-24 mx-4 md:max-w-screen-lg md:mx-auto">
       <h2 className="text-white text-3xl font-bold mb-8 text-center">
         What We Offer
       </h2>

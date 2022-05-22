@@ -14,6 +14,17 @@ export const IndexPageTemplate = ({ image }) => {
   return (
     <div>
       <FullWidthImage img={heroImage} title="EBS Performance + Fitness" />
+      <div className="px-6 md:px-16 py-36 md:py-48 w-full bg-ebsBlack text-white md:flex">
+        <div className="text-3xl md:text-4xl md:w-7/12 md:pr-4 !leading-relaxed">
+          <strong>EBS Performance + Fitness</strong> is a private training
+          facility in Costa Mesa, CA.
+        </div>
+        <div className="text-2xl font-light mt-12 md:mt-0 md:w-5/12 md:pl-4 leading-normal">
+          We provide premier sports performance training, personal training +
+          group fitness classes for Orange County.
+        </div>
+        <div className=""></div>
+      </div>
       <WhatWeOffer />
     </div>
   );
