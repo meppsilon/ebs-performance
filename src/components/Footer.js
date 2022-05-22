@@ -52,11 +52,11 @@ const Footer = class extends React.Component {
               <a className="mb-3 font-semibold" href="/group-fit">
                 Group Fitness
               </a>
-              <Link className="mb-3 font-semibold" to="/about">
-                About
-              </Link>
               <Link className="mb-3 font-semibold" to="/gallery">
                 Gallery
+              </Link>
+              <Link className="mb-3 font-semibold" to="/about">
+                About
               </Link>
               {/* <Link
                 className="mb-3 hover:underline font-semibold"
