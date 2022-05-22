@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'EBS Performance + Fitness',
     description:
-      'EBS Performance + Fitness: A semi-private performance facility in Costa Mesa, CA for athletes of all ages.',
+      'EBS Performance + Fitness: a private training facility specializing in sports performance training, personal training & group fitness in Costa Mesa, CA for athletes of all ages.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

@@ -16,14 +16,14 @@ const WhatWeOffer = () => (
       <h2 className="text-white text-3xl font-bold mb-8 text-center">
         What We Offer
       </h2>
-      <div className="flex flex-wrap">
-        <div className="w-full px-5 flex items-center text-lg my-4 font-light">
+      <div className="flex flex-wrap text-xl">
+        <div className="w-full px-5 flex items-center my-4 font-light">
           <div className="w-12 text-center" style={{ minWidth: '3rem' }}>
             <i className="fas fa-expand" />
           </div>
           <div className="ml-6">5,000 square feet of weight room space</div>
         </div>
-        <div className="w-full px-5 flex items-center text-lg my-4 font-light">
+        <div className="w-full px-5 flex items-center my-4 font-light">
           <div className="w-12 text-center" style={{ minWidth: '3rem' }}>
             <i className="fas fa-dumbbell" />
           </div>
@@ -37,7 +37,7 @@ const WhatWeOffer = () => (
             </a>
           </div>
         </div>
-        <div className="w-full px-5 flex items-center text-lg my-4 font-light">
+        <div className="w-full px-5 flex items-center my-4 font-light">
           <div className="w-12 text-center" style={{ minWidth: '3rem' }}>
             <i className="fas fa-user-md" />
           </div>
@@ -51,13 +51,30 @@ const WhatWeOffer = () => (
             </a>
           </div>
         </div>
-        <div className="w-full px-5 flex items-center text-lg my-4 font-light">
+        <div className="w-full px-5 flex items-center my-4 font-light">
           <div className="w-12 text-center" style={{ minWidth: '3rem' }}>
             <i className="fas fa-road" />
           </div>
-          <div className="ml-6">40 yards of outdoor field turf&nbsp;&mdash;&nbsp;<Link className="font-normal" to="/turf-space">reserve here</Link></div>
+          <div className="ml-6">
+            40 yards of outdoor field turf&nbsp;&mdash;&nbsp;
+            <Link className="font-normal" to="/turf-space">
+              reserve here
+            </Link>
+          </div>
         </div>
-        <div className="w-full px-5 flex items-center text-lg my-4 font-light">
+        <div className="w-full px-5 flex items-center my-4 font-light">
+          <div className="w-12 text-center" style={{ minWidth: '3rem' }}>
+            <i className="fas fa-users" />
+          </div>
+          <div className="ml-6">
+            50 min&nbsp;
+            <Link className="font-normal" to="/group-fitness">
+              group athletic conditioning classes
+            </Link>
+            &nbsp;for all skill levels
+          </div>
+        </div>
+        <div className="w-full px-5 flex items-center my-4 font-light">
           <div className="w-12 text-center" style={{ minWidth: '3rem' }}>
             <i className="fas fa-umbrella-beach" />
           </div>

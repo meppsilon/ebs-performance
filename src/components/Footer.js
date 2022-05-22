@@ -21,8 +21,8 @@ const Footer = class extends React.Component {
           <div className="md:flex">
             <div className="flex flex-col mb-6 md:w-1/3 md:mb-0">
               <div className="uppercase text-lg font-bold mb-4">Hours</div>
-              <div className="uppercase mb-3">Mon - Fri: 5AM - 10PM</div>
-              <div className="uppercase mb-3">Sat - Sun: 7AM - 8PM</div>
+              <div className="uppercase mb-3">Mon - Fri: 5AM - 9PM</div>
+              <div className="uppercase mb-3">Sat - Sun: 7AM - 4PM</div>
             </div>
             <div className="flex flex-col mb-6 md:w-1/3">
               <div className="uppercase text-lg font-bold mb-4">
