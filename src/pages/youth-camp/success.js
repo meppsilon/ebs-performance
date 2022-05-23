@@ -20,6 +20,7 @@ const YouthCampSuccess = () => {
         <h2 className="text-xl text-white font-semibold mb-8">
           Thank you for signing up for the Youth Camp.
         </h2>
+        <div className="text-lg">See you on July 9th at 10am!</div>
       </div>
     </Layout>
   );
