@@ -20,10 +20,6 @@ const YouthCamp = () => {
           <div className="mb-2">
             <strong>Who:</strong> Players of ages 6 - 15
           </div>
-          <div className="mb-2">
-            <a href="/img/waiver.pdf">Youth Camp Waiver</a> Please download and
-            bring it to the event.
-          </div>
         </div>
         <div className="text-xl font-semibold mb-6">Registration Form</div>
         <YouthCampForm />

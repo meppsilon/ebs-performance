@@ -3,9 +3,7 @@ import { Form, Field } from 'react-final-form';
 import Input from './Input';
 import { getYouthCampData, writeYouthCampData } from '../utils/firebase';
 import Select from './Select';
-
-const prodLink = 'https://buy.stripe.com/4gwg1YfYWcNDeOI8wA'
-const testLink = 'https://buy.stripe.com/test_4gwaFWcy7cDV1HOaEH';
+import { navigate } from 'gatsby';
 
 const YouthCampForm = () => {
   const [enrolleeEmails, setEnrolleeEmails] = useState([]);
@@ -53,9 +51,7 @@ const YouthCampForm = () => {
         onSubmit={async (data) => {
           const youthCampData = await writeYouthCampData(data);
           await localStorage.setItem('yid', youthCampData.id);
-          window.location = window.location.host.startsWith('localhost')
-            ? testLink
-            : prodLink;
+          navigate('/youth-camp/waiver')
         }}
         validate={validate}
       >
@@ -158,7 +154,7 @@ const YouthCampForm = () => {
             </div>
             <div className="flex justify-end">
               <button type="submit" className="btn-primary">
-                Submit
+                Sign up
               </button>
             </div>
           </form>

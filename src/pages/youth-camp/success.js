@@ -20,13 +20,6 @@ const YouthCampSuccess = () => {
         <h2 className="text-xl text-white font-semibold mb-8">
           Thank you for signing up for the Youth Camp.
         </h2>
-        <div className="text-xl">
-          <div className="font-bold italic">Important:</div>
-          <div>
-            Please download the <a href="/img/waiver.pdf">Youth Camp Waiver</a>
-            &nbsp;and bring it to the youth camp.
-          </div>
-        </div>
       </div>
     </Layout>
   );
