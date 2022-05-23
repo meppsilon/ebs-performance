@@ -2,8 +2,10 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import Input from './Input';
 import { getYouthCampData, writeYouthCampData } from '../utils/firebase';
-import { navigate } from 'gatsby';
 import Select from './Select';
+
+const prodLink = 'https://buy.stripe.com/4gwg1YfYWcNDeOI8wA'
+const testLink = 'https://buy.stripe.com/test_4gwaFWcy7cDV1HOaEH';
 
 const YouthCampForm = () => {
   const [enrolleeEmails, setEnrolleeEmails] = useState([]);
@@ -49,8 +51,11 @@ const YouthCampForm = () => {
     <Fragment>
       <Form
         onSubmit={async (data) => {
-          await writeYouthCampData(data);
-          navigate('/youth-camp/success');
+          const youthCampData = await writeYouthCampData(data);
+          await localStorage.setItem('yid', youthCampData.id);
+          window.location = window.location.host.startsWith('localhost')
+            ? testLink
+            : prodLink;
         }}
         validate={validate}
       >
@@ -98,7 +103,7 @@ const YouthCampForm = () => {
                 />
               </div>
               <div className="flex">
-                <div className="mb-4 px-4 w-full md:w-1/4" style={{ minWidth: 150 }}>
+                <div className="mb-4 px-4" style={{ minWidth: 150 }}>
                   <Field
                     name="shirtSize"
                     placeholder="T-Shirt size"

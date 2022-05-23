@@ -10,11 +10,22 @@ const YouthCamp = () => {
           <h1 className="mb-0">Youth Camp</h1>
         </div>
         <div className="mb-6">
-          <div className="text-xl font-semibold">Event information</div>
-          <div><strong>Where:</strong> Costa Mesa High School</div>
-          <div><strong>When:</strong> July 9th, 2022 from 10-1pm</div>
-          <div><strong>Who:</strong> Players ages 6-15</div>
+          <div className="text-xl font-semibold mb-4">Event information</div>
+          <div className="mb-2">
+            <strong>Where:</strong> Costa Mesa High School
+          </div>
+          <div className="mb-2">
+            <strong>When:</strong> July 9th, 2022 from 10am - 1pm
+          </div>
+          <div className="mb-2">
+            <strong>Who:</strong> Players of ages 6 - 15
+          </div>
+          <div className="mb-2">
+            <a href="/img/waiver.pdf">Youth Camp Waiver</a> Please download and
+            bring it to the event.
+          </div>
         </div>
+        <div className="text-xl font-semibold mb-6">Registration Form</div>
         <YouthCampForm />
       </div>
     </Layout>
