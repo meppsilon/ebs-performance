@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import Layout from '../../components/Layout';
 
 const GroupFit = () => {
@@ -8,6 +9,12 @@ const GroupFit = () => {
         <h1>EBS Group Fitness</h1>
         <div className="bg-white">
           <div>
+            <Helmet>
+              <script
+                src="https://widgets.mindbodyonline.com/javascripts/healcode.js"
+                type="text/javascript"
+              ></script>
+            </Helmet>
             <healcode-widget
               data-type="schedules"
               data-widget-partner="object"

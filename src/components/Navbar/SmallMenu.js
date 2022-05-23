@@ -3,11 +3,12 @@ import { Link } from 'gatsby';
 
 const convertToKebab = (str) => str.toLowerCase().replace(' ', '-');
 
-const SmallMenu = ({ sections, hideMenu, isA }) => (
+const SmallMenu = ({ sections, hideMenu }) => (
   <div className="font-semibold text-sm">
     {sections.map((section, i) => {
-      const LinkComp = isA ? 'a' : Link;
-      const linkProp = isA
+      console.log('section', section.link, section.isA);
+      const LinkComp = section.isA ? 'a' : Link;
+      const linkProp = section.isA
         ? { href: `/${section.link}` }
         : { to: `/${section.link}` };
       return (
