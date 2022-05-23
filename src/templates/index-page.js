@@ -23,7 +23,6 @@ export const IndexPageTemplate = ({ image }) => {
           We provide premier sports performance training, personal training +
           group fitness classes for Orange County.
         </div>
-        <div className=""></div>
       </div>
       <WhatWeOffer />
     </div>

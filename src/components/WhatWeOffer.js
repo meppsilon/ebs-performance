@@ -68,9 +68,9 @@ const WhatWeOffer = () => (
           </div>
           <div className="ml-6">
             50 min&nbsp;
-            <Link className="font-normal" to="/group-fitness">
+            <a className="font-normal" href="/group-fit">
               group athletic conditioning classes
-            </Link>
+            </a>
             &nbsp;for all skill levels
           </div>
         </div>
