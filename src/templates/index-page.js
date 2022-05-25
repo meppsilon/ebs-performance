@@ -30,10 +30,15 @@ export const IndexPageTemplate = ({ image }) => {
         <div className="text-3xl font-bold text-center mb-10">Upcoming Events</div>
         <div className="text-center md:text-left md:flex justify-around items-center">
           <div className="md:mr-10">
-            <div className="text-2xl font-semibold mb-8">Youth Football Camp</div>
-            <div className="mb-6">
+            <div className="text-2xl font-semibold mb-4">Youth Football Camp</div>
+            <div className="mb-8">
               Sponsored by <strong>EBS Performance + Fitness</strong> and&nbsp;
               <strong>Newport Mesa Pop Warner Football</strong>
+            </div>
+            <div className="mb-6">
+              <div className="text-lg font-bold">Updated prices</div>
+              <div><span className="font-semibold">Early bird (before June 20th):</span> $50</div>
+              <div><span className="font-semibold">Regular (after June 20th):</span> $75</div>
             </div>
             <Link to="/youth-camp" className="btn-primary inline-block mb-8 no-underline">
               Register

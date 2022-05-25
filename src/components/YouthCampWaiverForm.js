@@ -5,7 +5,7 @@ import {
   updateYouthCampData,
 } from '../utils/firebase';
 
-const prodLink = 'https://buy.stripe.com/4gwg1YfYWcNDeOI8wA';
+const prodLink = 'https://buy.stripe.com/4gw2b88wu8xncGA28d';
 const testLink = 'https://buy.stripe.com/test_4gwaFWcy7cDV1HOaEH';
 
 const YouthCampForm = () => {
@@ -54,9 +54,9 @@ const YouthCampForm = () => {
         signature below.
       </div>
       <Form
-        onSubmit={async (data) => {
+        onSubmit={async () => {
           const yid = localStorage.getItem('yid');
-          const youthCampData = await updateYouthCampData(yid, { waiverSigned: true });
+          await updateYouthCampData(yid, { waiverSigned: true });
           window.location = window.location.host.startsWith('localhost')
             ? testLink
             : prodLink;
