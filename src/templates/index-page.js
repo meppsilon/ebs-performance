@@ -25,32 +25,6 @@ export const IndexPageTemplate = ({ image }) => {
           group fitness classes for Orange County.
         </div>
       </div>
-      <div className="px-6 md:px-16 pb-12 md:pb-20 w-full bg-ebsBlack text-white">
-        <div className="w-full border-t border-white pt-12 md:pb-20" />
-        <div className="text-3xl font-bold text-center mb-10">Upcoming Events</div>
-        <div className="text-center md:text-left md:flex justify-around items-center">
-          <div className="md:mr-10">
-            <div className="text-2xl font-semibold mb-4">Youth Football Camp</div>
-            <div className="mb-8">
-              Sponsored by <strong>EBS Performance + Fitness</strong> and&nbsp;
-              <strong>Newport Mesa Pop Warner Football</strong>
-            </div>
-            <div className="mb-6">
-              <div className="text-lg font-bold">Updated prices</div>
-              <div><span className="font-semibold">Early bird (before June 20th):</span> $50</div>
-              <div><span className="font-semibold">Regular (after June 20th):</span> $75</div>
-            </div>
-            <Link to="/youth-camp" className="btn-primary inline-block mb-8 no-underline">
-              Register
-            </Link>
-          </div>
-          <img
-            src={youthCampFlyer}
-            className="w-1/2"
-            style={{ maxWidth: '350px' }}
-          />
-        </div>
-      </div>
       <WhatWeOffer />
     </div>
   );

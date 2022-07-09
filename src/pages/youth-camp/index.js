@@ -21,8 +21,10 @@ const YouthCamp = () => {
             <strong>Who:</strong> Players of ages 6 - 15
           </div>
         </div>
-        <div className="text-xl font-semibold mb-6">Registration Form</div>
-        <YouthCampForm />
+        <div>
+          <h2>Registration closed!</h2>
+          <div>Thank you to all for applying to the Youth Camp. See you tomorrow!</div>
+        </div>
       </div>
     </Layout>
   );
