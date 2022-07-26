@@ -4,7 +4,7 @@ import { Form, Field } from 'react-final-form';
 import { writeTurfSpaceData, updateTurfSpaceData } from '../utils/firebase';
 import Input from './Input';
 
-const allOff = ['all off', 'alloff', 'all-off'];
+const allOff = ['ebs1216'];
 const halfOff = ['half off', 'halfoff', 'half-off'];
 
 const fullPriceLink = {
