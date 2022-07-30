@@ -21,10 +21,10 @@ collections:
     format: "json"
     fields:
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Bio", name: "bio", widget: "markdown" }
-      - { label: "Specialization", name: "specialization", widget: "string" }
       - { label: "Profile Image", name: "profile", widget: "image" }
-      - { label: "Instagram Handle", name: "instagram", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "markdown" }
+      - { label: "Specialization", name: "specialization", widget: "string", required: false }
+      - { label: "Instagram Handle", name: "instagram", widget: "string", required: false }
 
   - name: "pages"
     label: "Pages"
