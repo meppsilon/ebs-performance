@@ -19,7 +19,7 @@ collections:
     folder: "src/pages/trainers"
     create: true
     format: "json"
-    slug: "{{name}}"
+    identifier_field: "name"
     fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Profile Image", name: "profile", widget: "image" }
