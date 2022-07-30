@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: meppsilon/ebs-performance
   branch: master
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
