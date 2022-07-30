@@ -21,6 +21,12 @@ collections:
     format: "json"
     identifier_field: "name"
     fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "trainer",
+        }
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Profile Image", name: "profile", widget: "image" }
       - { label: "Bio", name: "bio", widget: "markdown" }
