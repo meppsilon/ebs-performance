@@ -18,14 +18,13 @@ collections:
     label: "Trainers"
     folder: "src/pages/trainers"
     create: true
-    format: "json"
     identifier_field: "name"
     fields:
       - {
           label: "Template Key",
           name: "templateKey",
           widget: "hidden",
-          default: "trainer",
+          default: "trainers-page",
         }
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Profile Image", name: "profile", widget: "image" }
