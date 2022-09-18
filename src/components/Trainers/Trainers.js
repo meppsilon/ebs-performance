@@ -4,7 +4,7 @@ import Trainer from './Trainer';
 const Trainers = ({ trainers }) => {
   const [activeTrainer, setActiveTrainer] = useState();
   return (
-    <div className="flex flex-wrap -mx-4">
+    <div className="flex flex-wrap -m-4">
       {trainers.map((trainer) => (
         <Trainer
           key={trainer.node.frontmatter.name}

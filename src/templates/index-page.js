@@ -6,7 +6,6 @@ import { getImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import FullWidthImage from '../components/FullWidthImage';
 import WhatWeOffer from '../components/WhatWeOffer';
-import youthCampFlyer from '../img/youth-camp-flyer.jpg';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({ image }) => {
