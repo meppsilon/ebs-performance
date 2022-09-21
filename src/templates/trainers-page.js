@@ -17,6 +17,7 @@ const TrainersPage = ({ data }) => {
             </div>
             <a
               target="_blank"
+              rel="noopener"
               href={`https://instagram.com/${data.markdownRemark.frontmatter.instagram}`}
               className="font-light text-sm"
             >
