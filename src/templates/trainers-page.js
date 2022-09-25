@@ -12,7 +12,7 @@ const TrainersPage = ({ data }) => {
             style={{
               backgroundImage: `url(${data.markdownRemark.frontmatter.banner?.publicURL})`,
             }}
-            className="absolute h-40 md:h-52 w-full"
+            className="absolute h-40 md:h-52 w-full bg-cover bg-center"
           />
         ) : (
           <div className="absolute h-40 md:h-52 bg-zinc-400 w-full" />
@@ -27,7 +27,7 @@ const TrainersPage = ({ data }) => {
               {data.markdownRemark.frontmatter.name}
               <a
               target="_blank"
-              rel="noopener"
+              rel="noreferrer"
               href={`https://instagram.com/${data.markdownRemark.frontmatter.instagram}`}
               className="font-light text-base flex items-end no-underline ml-3"
             >
@@ -38,7 +38,7 @@ const TrainersPage = ({ data }) => {
             </a>
             </div>
           </div>
-          <div className="my-8">{data.markdownRemark.frontmatter.bio}</div>
+          <div className="my-8" dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
           <div className="flex">
             <div className="font-semibold">Specialization:</div>
             &nbsp;
@@ -63,7 +63,10 @@ export const pageQuery = graphql`
         profile {
           publicURL
         }
-        bio
+        banner {
+          publicURL
+        }
+        body
         specialization
       }
     }

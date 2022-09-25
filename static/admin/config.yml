@@ -28,7 +28,7 @@ collections:
         }
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Profile Image", name: "profile", widget: "image" }
-      - { label: "Bio", name: "bio", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Specialization", name: "specialization", widget: "string", required: false }
       - { label: "Instagram Handle", name: "instagram", widget: "string", required: false }
       - { label: "Banner Image", name: "banner", widget: "image", required: false }
