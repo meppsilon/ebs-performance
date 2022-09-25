@@ -1,8 +1,12 @@
 ---
-templateKey: 'trainers-page'
-instagram: 'trainer2'
-name: 'Trainer 2'
-profile: '/img/safari-pinned-tab.svg'
-body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-specialization: 'athletic training, long distance running'
+templateKey: trainers-page
+name: Trainer 2
+profile: /img/safari-pinned-tab.svg
+specialization: athletic training, long distance running
+instagram: trainer2
 ---
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+* Ut enim ad minim veniam
+* Lorem ipsum dolor sit amet
+* Duis aute irure dolor in reprehenderit
