@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 
 const TrainersPage = ({ data }) => {
+  console.log('data', data)
   return (
     <Layout className="bg-ebsBlack text-white">
       <div className="max-w-screen-md sm:mx-6 md:mx-auto relative">
