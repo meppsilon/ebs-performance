@@ -31,6 +31,7 @@ collections:
       - { label: "Bio", name: "bio", widget: "markdown" }
       - { label: "Specialization", name: "specialization", widget: "string", required: false }
       - { label: "Instagram Handle", name: "instagram", widget: "string", required: false }
+      - { label: "Banner Image", name: "banner", widget: "image", required: false }
 
   - name: "pages"
     label: "Pages"

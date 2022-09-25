@@ -32,7 +32,7 @@ const TrainersPage = () => {
         return (
           <Layout className="bg-ebsBlack text-white">
             <div className="max-w-screen-md md:mx-auto mx-6 my-10">
-              <h1>Trainers</h1>
+              <h1>Our Trainers</h1>
               <Trainers trainers={trainers} />
             </div>
           </Layout>
