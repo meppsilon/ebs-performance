@@ -46,9 +46,9 @@ const Footer = class extends React.Component {
             </div>
             <div className="flex flex-col mb-6 md:w-1/3">
               <div className="uppercase text-lg font-bold mb-4">Pages</div>
-              <Link className="mb-3 font-semibold" to="/turf-space">
+              {/* <Link className="mb-3 font-semibold" to="/turf-space">
                 Reserve Turf
-              </Link>
+              </Link> */}
               <a className="mb-3 font-semibold" href="/group-fit">
                 Group Fitness
               </a>
