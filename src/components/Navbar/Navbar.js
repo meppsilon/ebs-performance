@@ -63,12 +63,18 @@ const Navbar = class extends React.Component {
                 >
                   Reserve Turf
                 </Link> */}
-                <a
+                {/* <a
                   className="navbar-item flex items-center no-underline"
                   href="/group-fit"
                 >
                   Group Fitness
-                </a>
+                </a> */}
+                <Link
+                  className="navbar-item flex items-center no-underline"
+                  to="/combine-training"
+                >
+                  Combine Training
+                </Link>
                 <Link
                   className="navbar-item flex items-center no-underline"
                   to="/gallery"
@@ -109,7 +115,8 @@ const Navbar = class extends React.Component {
           <SmallMenu
             sections={[
               // { title: 'Reserve Turf', link: 'turf-space' },
-              { title: 'Group Fitness', isA: true, link: 'group-fit' },
+              // { title: 'Group Fitness', isA: true, link: 'group-fit' },
+              { title: 'Combine Training', link: 'combine-training' },
               { title: 'Gallery', link: 'gallery' },
               { title: 'About', link: 'about' },
             ]}

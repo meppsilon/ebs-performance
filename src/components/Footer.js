@@ -49,9 +49,12 @@ const Footer = class extends React.Component {
               {/* <Link className="mb-3 font-semibold" to="/turf-space">
                 Reserve Turf
               </Link> */}
-              <a className="mb-3 font-semibold" href="/group-fit">
+              {/* <a className="mb-3 font-semibold" href="/group-fit">
                 Group Fitness
-              </a>
+              </a> */}
+              <Link className="mb-3 font-semibold" to="/combine-training">
+                Combine Training
+              </Link>
               <Link className="mb-3 font-semibold" to="/gallery">
                 Gallery
               </Link>

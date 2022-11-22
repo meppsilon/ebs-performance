@@ -22,8 +22,6 @@ const CombineTraining = () => {
     setNumPages(nextNumPages);
   };
 
-  console.log('combinePDF', combinePDF);
-
   return (
     <Layout className="bg-ebsBlack">
       <div className="max-w-screen-md md:mx-auto mx-6 my-10">
@@ -31,12 +29,13 @@ const CombineTraining = () => {
           Combine Training
         </h1>
         <Document
-          file={`http://localhost:8000/${combinePDF}`}
+          file={`./${combinePDF}`}
           onLoadSuccess={onDocumentLoadSuccess}
           options={{
             cMapUrl: 'cmaps/',
             cMapPacked: true,
           }}
+          className="bg-white"
         >
           {Array.from(new Array(numPages), (_, index) => (
             <Page key={`page_${index + 1}`} pageNumber={index + 1} />
