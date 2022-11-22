@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5';
 import Layout from '../../components/Layout';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import { pdfjs } from 'react-pdf';
 
-import '../../css/pdf.css'
+import '../../css/pdf.css';
 
 import combinePDF from '../../img/CombineTraining.pdf';
 
@@ -17,6 +17,11 @@ if (typeof window !== 'undefined' && 'Worker' in window) {
 
 const CombineTraining = () => {
   const [numPages, setNumPages] = useState(null);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const onDocumentLoadSuccess = ({ numPages: nextNumPages }) => {
     setNumPages(nextNumPages);
@@ -28,19 +33,21 @@ const CombineTraining = () => {
         <h1 className="text-2xl text-white font-bold mb-10">
           Combine Training
         </h1>
-        <Document
-          file={`./${combinePDF}`}
-          onLoadSuccess={onDocumentLoadSuccess}
-          options={{
-            cMapUrl: 'cmaps/',
-            cMapPacked: true,
-          }}
-          className="bg-white"
-        >
-          {Array.from(new Array(numPages), (_, index) => (
-            <Page key={`page_${index + 1}`} pageNumber={index + 1} />
-          ))}
-        </Document>
+        {isClient && (
+          <Document
+            file={`./${combinePDF}`}
+            onLoadSuccess={onDocumentLoadSuccess}
+            options={{
+              cMapUrl: 'cmaps/',
+              cMapPacked: true,
+            }}
+            className="bg-white"
+          >
+            {Array.from(new Array(numPages), (_, index) => (
+              <Page key={`page_${index + 1}`} pageNumber={index + 1} />
+            ))}
+          </Document>
+        )}
       </div>
     </Layout>
   );
