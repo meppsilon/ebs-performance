@@ -1,9 +1,9 @@
 ---
 templateKey: trainers-page
-name: Trainer 1
-profile: /img/safari-pinned-tab.svg
+name: Antonio Zanellato
+profile: /img/antonio-zanellato.jpg
 specialization: athletic training, long distance running
-instagram: trainer1
+instagram: strengthphilosopher
 ---
 _Lorem ipsum dolor sit amet_, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

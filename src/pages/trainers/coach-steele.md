@@ -1,10 +1,9 @@
 ---
 templateKey: trainers-page
-name: Trainer 0
-profile: /img/safari-pinned-tab.svg
+name: Coach Steele
+profile: /img/coach-steele.jpg
 specialization: athletic training, long distance running
-instagram: trainer0
-banner: /img/carousel-4.jpg
+instagram: lumberjack36
 ---
 ## Lorem ipsum dolor sit amet
 

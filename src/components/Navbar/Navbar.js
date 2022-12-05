@@ -77,6 +77,12 @@ const Navbar = class extends React.Component {
                 </Link>
                 <Link
                   className="navbar-item flex items-center no-underline"
+                  to="/trainers"
+                >
+                  Trainers
+                </Link>
+                <Link
+                  className="navbar-item flex items-center no-underline"
                   to="/gallery"
                 >
                   Gallery
@@ -117,6 +123,7 @@ const Navbar = class extends React.Component {
               // { title: 'Reserve Turf', link: 'turf-space' },
               // { title: 'Group Fitness', isA: true, link: 'group-fit' },
               { title: 'Combine Training', link: 'combine-training' },
+              { title: 'Trainers', link: 'trainers' },
               { title: 'Gallery', link: 'gallery' },
               { title: 'About', link: 'about' },
             ]}

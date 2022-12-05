@@ -55,6 +55,9 @@ const Footer = class extends React.Component {
               <Link className="mb-3 font-semibold" to="/combine-training">
                 Combine Training
               </Link>
+              <Link className="mb-3 font-semibold" to="/trainers">
+                Trainers
+              </Link>
               <Link className="mb-3 font-semibold" to="/gallery">
                 Gallery
               </Link>

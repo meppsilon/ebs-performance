@@ -100,3 +100,11 @@ export const writeYouthCampData = writeData('youthCamp');
 export const updateYouthCampData = updateListData('youthCamp');
 
 export const getYouthCampData = getData('youthCamp');
+
+
+// Contact data
+export const writeContactData = writeData('contacts');
+
+export const updateContactData = updateListData('contacts');
+
+export const getContactsData = getData('contacts')
