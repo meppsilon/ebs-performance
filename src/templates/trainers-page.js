@@ -6,10 +6,10 @@ import ContactForm from '../components/Trainers/ContactForm';
 const TrainersPage = ({ data }) => (
   <Layout className="bg-ebsBlack text-white">
     <div className="max-w-screen-md sm:mx-6 md:mx-auto relative">
-      <div className="absolute h-32 md:h-40 bg-zinc-400 w-full" />
+      <div className="absolute h-32 md:h-40 bg-primary w-full" />
       <Link
         to="/trainers"
-        className="text-ebsBlack hover:text-zinc-700 z-10 absolute left-5 top-5 no-underline"
+        className="text-white hover:text-white/80 z-10 absolute left-5 top-5 no-underline"
       >
         <i className="fas fa-chevron-left" /> Back
       </Link>
