@@ -9,7 +9,7 @@ const TrainersPage = ({ data }) => (
       <div className="absolute h-32 md:h-40 bg-primary w-full" />
       <Link
         to="/trainers"
-        className="text-white hover:text-white/80 z-10 absolute left-5 top-5 no-underline"
+        className="text-white hover:text-white/70 z-10 absolute left-5 top-5 no-underline"
       >
         <i className="fas fa-chevron-left" /> Back
       </Link>
