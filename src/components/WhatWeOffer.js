@@ -37,7 +37,7 @@ const WhatWeOffer = () => (
             </a>
           </div>
         </div>
-        {/* <div className="w-full px-5 flex items-center my-4 font-light">
+        <div className="w-full px-5 flex items-center my-4 font-light">
           <div className="w-12 text-center" style={{ minWidth: '3rem' }}>
             <i className="fas fa-user-md" />
           </div>
@@ -50,7 +50,7 @@ const WhatWeOffer = () => (
               Cuirim Sports Recovery
             </a>
           </div>
-        </div> */}
+        </div>
         <div className="w-full px-5 flex items-center my-4 font-light">
           <div className="w-12 text-center" style={{ minWidth: '3rem' }}>
             <i className="fas fa-road" />

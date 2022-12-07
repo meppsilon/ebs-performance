@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import logo from '../img/EBSprimarylogo.png';
 import americanBBLogo from '../img/american-barbell-logo.png';
-// import cuirimLogo from '../img/cuirim-logo.jpg';
+import cuirimLogo from '../img/cuirim-logo.jpg';
 
 const Footer = class extends React.Component {
   render() {
@@ -81,7 +81,7 @@ const Footer = class extends React.Component {
           <div className="mb-6">
             <div className="text-lg font-bold uppercase mb-5">Partners</div>
             <div className="flex flex-wrap">
-            {/* <div className="mb-4"><img src={cuirimLogo} className="h-16" /></div> */}
+            <div className="mb-4"><img src={cuirimLogo} className="h-16" /></div>
             <div className="mb-4 ml-6"><img src={americanBBLogo} className="h-16" /></div>
             </div>
           </div>
