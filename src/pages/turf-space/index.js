@@ -6,6 +6,7 @@ import 'react-calendar/dist/Calendar.css';
 import Layout from '../../components/Layout';
 import TurfSpaceForm from '../../components/TurfSpaceForm';
 import { getTurfSpaceData } from '../../utils/firebase';
+import { navigate } from 'gatsby';
 
 const isApril9th = (date) => {
   if (!date) return false;
@@ -58,6 +59,7 @@ const TurfSpace = () => {
   const timeRange = baseTimeRange.filter((hour) => !selectedDayExistingTimes.includes(hour));
 
   useEffect(() => {
+    navigate('/')
     const getTurfSpaceWrapper = async () => {
       const turfSpaceRegisters = await getTurfSpaceData();
       const dates = turfSpaceRegisters
