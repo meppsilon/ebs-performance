@@ -5,7 +5,7 @@ const Trainer = ({ name, profile, instagram }) => (
   <Link
     to={`/trainers/${name.toLowerCase().replace(/\s/g, '-')}`}
     key={name}
-    className="flex flex-col items-center mx-4 my-4 cursor-pointer group w-40"
+    className="flex flex-col items-center cursor-pointer group w-40"
   >
     <img
       src={profile.publicURL}

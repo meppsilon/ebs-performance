@@ -3,7 +3,7 @@ import Trainer from './Trainer';
 
 const Trainers = ({ trainers }) => {
   return (
-    <div className="flex flex-wrap -m-4">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
       {trainers.map((trainer) => (
         <Trainer
           key={trainer.node.frontmatter.name}
