@@ -63,7 +63,7 @@ const TemplateWrapper = ({ className, children }) => {
         />
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-412MRPNH0T"
+          src="https://www.googletagmanager.com/gtag/js?id=G-J377L7Y4F9"
         ></script>
         <script>
           {`
@@ -71,8 +71,8 @@ const TemplateWrapper = ({ className, children }) => {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-412MRPNH0T');
-        `}
+          gtag('config', 'G-J377L7Y4F9');
+          `}
         </script>
       </Helmet>
       <Navbar />
