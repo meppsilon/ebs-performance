@@ -4,6 +4,7 @@ name: Antonio Zanellato
 profile: /img/antonio-zanellato.jpg
 specialization: athletic training, long distance running
 instagram: strengthphilosopher
+email: antoniozanellato80@gmail.com
 ---
 _Lorem ipsum dolor sit amet_, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

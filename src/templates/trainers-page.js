@@ -32,7 +32,7 @@ const TrainersPage = ({ data }) => (
           </div>
         </div>
         <h1>Contact</h1>
-        <ContactForm trainer={data.markdownRemark.frontmatter.name} />
+        <ContactForm trainer={data.markdownRemark.frontmatter} />
       </div>
     </div>
   </Layout>
@@ -52,6 +52,7 @@ export const pageQuery = graphql`
           publicURL
         }
         specialization
+        email
       }
     }
   }
