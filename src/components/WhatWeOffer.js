@@ -80,6 +80,12 @@ const WhatWeOffer = () => (
           </div>
           <div className="ml-6">Sand-Pit</div>
         </div>
+        <div className="w-full px-5 flex items-center my-4 font-light">
+          <div className="w-12 text-center" style={{ minWidth: '3rem' }}>
+            <i className="fas fa-bath" />
+          </div>
+          <div className="ml-6">Custom Sauna by <a href="https://www.trisumsaunas.com/">TriSum Saunas</a> and cold plunge tubs</div>
+        </div>
       </div>
     </div>
   </section>
