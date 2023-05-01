@@ -9,7 +9,7 @@ const Select = ({
   options,
   errorSide,
 }) => (
-  <div className={containerClassName}>
+  <div key={`select-${input.name}`} className={containerClassName}>
     <div className="mb-2 text-white font-semibold">{label}</div>
     <select
       {...input}
