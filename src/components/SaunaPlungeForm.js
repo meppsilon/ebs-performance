@@ -48,7 +48,7 @@ const SaunaPlungeForm = ({ date }) => {
           ...data,
           date: date.getTime(),
         });
-        await localStorage.setItem('tid', turfSpace.id);
+        await localStorage.setItem('tid', saunaPlunge.id);
         navigate('/sauna-plunge/success');
         // if (allOff.includes(coupon)) {
         //   updateTurfSpaceData(turfSpace.id, { paid: true });
