@@ -4,25 +4,25 @@ import { Form, Field } from 'react-final-form';
 import { writeSaunaPlungeData } from '../utils/firebase';
 import Input from './Input';
 
-const allOff = ['ebs1216'];
-const halfOff = ['half off', 'halfoff', 'half-off'];
+// const allOff = ['ebs1216'];
+// const halfOff = ['half off', 'halfoff', 'half-off'];
 
-const fullPriceLink = {
-  test: 'https://buy.stripe.com/test_7sIaFW55FfQ786c7st',
-  prod: 'https://buy.stripe.com/7sI1744ge00R5e8bIK',
-};
-const halfPriceLink = {
-  test: 'https://buy.stripe.com/test_bIY4hygOn1Zh0DKeUW',
-  prod: 'https://buy.stripe.com/5kA5nk1424h7gWQ5kn',
-};
+// const fullPriceLink = {
+//   test: 'https://buy.stripe.com/test_7sIaFW55FfQ786c7st',
+//   prod: 'https://buy.stripe.com/7sI1744ge00R5e8bIK',
+// };
+// const halfPriceLink = {
+//   test: 'https://buy.stripe.com/test_bIY4hygOn1Zh0DKeUW',
+//   prod: 'https://buy.stripe.com/5kA5nk1424h7gWQ5kn',
+// };
 
-const findLink = (coupon) => {
-  const allEnvLink = halfOff.includes(coupon) ? halfPriceLink : fullPriceLink;
-  const env = window.location.host.startsWith('localhost') ? 'test' : 'prod';
-  return allEnvLink[env];
-};
+// const findLink = (coupon) => {
+//   const allEnvLink = halfOff.includes(coupon) ? halfPriceLink : fullPriceLink;
+//   const env = window.location.host.startsWith('localhost') ? 'test' : 'prod';
+//   return allEnvLink[env];
+// };
 
-const SaunaPlungeForm = ({ date }) => {
+const SaunaPlungeForm = ({ date, type }) => {
   const validate = (values) => {
     const errors = {};
     if (!values.firstName) {
@@ -46,16 +46,11 @@ const SaunaPlungeForm = ({ date }) => {
         // add data to firebase
         const saunaPlunge = await writeSaunaPlungeData({
           ...data,
+          type,
           date: date.getTime(),
         });
         await localStorage.setItem('sid', saunaPlunge.id);
         navigate('/sauna-plunge/success');
-        // if (allOff.includes(coupon)) {
-        //   updateTurfSpaceData(turfSpace.id, { paid: true });
-        //   navigate('/turf-space/success');
-        // } else {
-        //   window.location = findLink(data.discount?.toLowerCase());
-        // }
       }}
       validate={validate}
     >

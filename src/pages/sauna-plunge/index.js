@@ -4,10 +4,10 @@ import React from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import Layout from '../../components/Layout';
-import TurfSpaceForm from '../../components/TurfSpaceForm';
 import { getTurfSpaceData } from '../../utils/firebase';
 import Select from '../../components/Select';
 import { Field, Form } from 'react-final-form';
+import SaunaPlungeForm from '../../components/SaunaPlungeForm';
 
 const isApril9th = (date) => {
   if (!date) return false;
@@ -136,7 +136,7 @@ const SaunaPlunge = () => {
               </button>
             )}
             <h3>Personal details</h3>
-            <TurfSpaceForm date={date} type={radio} />
+            <SaunaPlungeForm date={date} type={radio} />
           </Fragment>
         ) : (
           <Fragment>
