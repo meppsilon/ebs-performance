@@ -108,3 +108,10 @@ export const writeContactData = writeData('contacts');
 export const updateContactData = updateListData('contacts');
 
 export const getContactsData = getData('contacts')
+
+// Sauna plunge data
+export const writeSaunaPlungeData = writeData('saunaPlunge');
+
+export const updateSaunaPlungeData = updateListData('saunaPlunge');
+
+export const getSaunaPlungeData = getData('saunaPlunge')

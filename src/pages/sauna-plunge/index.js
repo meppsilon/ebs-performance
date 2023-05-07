@@ -16,10 +16,16 @@ const isApril9th = (date) => {
   return isApril && is9th;
 };
 
+const padZeros = (num, size = 2) => {
+  if (String(num).length < size) {
+    return padZeros(`0${num}`, size);
+  }
+  return num;
+};
+
 const formatTime = (hours) => {
-  const isHalf = hours % 1 === 0.5;
-  const minutes = isHalf ? '30' : '00';
-  const hourModulo = (isHalf ? hours - 0.5 : hours) % 12;
+  const minutes = padZeros(Math.round((hours % 1) * 60));
+  const hourModulo = Math.floor(hours) % 12;
   const hourTime = hourModulo === 0 ? 12 : hourModulo;
   const amPm = hours / 12 < 1 ? 'am' : 'pm';
   return `${hourTime}:${minutes} ${amPm}`;
@@ -53,6 +59,11 @@ const isToday = (date) => {
   return isSelectedDate(date, today);
 };
 
+const typeMap = {
+  sauna: 'Sauna',
+  plunge: 'Cold Plunge',
+};
+
 const SaunaPlunge = () => {
   const today = new Date();
   const [radio, setRadio] = useState('sauna');
@@ -80,7 +91,9 @@ const SaunaPlunge = () => {
       selectedDayExistingTimes.findIndex((time) => time.minutes === minute) ===
       -1
   );
-  console.log('minuteRange', minuteRange, baseMinuteRange);
+  const currentDisplayHour = currentHour % 12 === 0 ? 12 : currentHour % 12;
+  const currentDisplayMinute = Math.ceil(currentMinute / 5) * 5;
+  const currentDisplayAmPm = currentHour / 12 < 1 ? 'am' : 'pm';
 
   useEffect(() => {
     const getTurfSpaceWrapper = async () => {
@@ -100,21 +113,30 @@ const SaunaPlunge = () => {
         {time && date ? (
           <Fragment>
             <h2>
-              Thank you for selecting a time to reserve the sauna or cold
-              plunge! To complete your reservation, please provide your
-              information below.
+              Thank you for selecting a time to reserve the{' '}
+              {typeMap[radio].toLowerCase()}! To complete your reservation,
+              please provide your information below.
             </h2>
-            <h3>Selected time</h3>
-            <div>
-              {date.toDateString()} at {formatTime(time)}
-            </div>
-            {time && date && (
-              <button className="link mb-6" onClick={() => setTime()}>
-                Change time
+            <h3>Selected options</h3>
+            <ul className="mb-3 font-medium">
+              <li>{typeMap[radio]}</li>
+              <li>
+                {date.toDateString()} at {formatTime(time)}
+              </li>
+            </ul>
+            {radio && time && date && (
+              <button
+                className="link mb-6"
+                onClick={() => {
+                  setTime();
+                  setRadio();
+                }}
+              >
+                Change options
               </button>
             )}
             <h3>Personal details</h3>
-            <TurfSpaceForm date={date} />
+            <TurfSpaceForm date={date} type={radio} />
           </Fragment>
         ) : (
           <Fragment>
@@ -178,8 +200,12 @@ const SaunaPlunge = () => {
                         key={x}
                         className="px-4 py-2 border rounded w-full sm:w-60"
                         onClick={() => {
+                          date.setHours(Math.floor(x));
+                          if (x % 1 === 0.5) {
+                            date.setMinutes(30);
+                          }
                           setTime(x);
-                          setDate(new Date(date.setHours(x)));
+                          setDate(new Date(date));
                         }}
                       >
                         {formatTime(x)}
@@ -189,8 +215,19 @@ const SaunaPlunge = () => {
                 )}
                 {radio === 'plunge' && hourRange.length > 0 && (
                   <Form
+                    initialValues={{
+                      hours: currentDisplayHour,
+                      minutes: currentDisplayMinute,
+                      amPm: currentDisplayAmPm,
+                    }}
                     onSubmit={(data) => {
-                      console.log('data', data);
+                      const { hours, minutes, amPm } = data;
+                      const hour = Number(hours) + (amPm === 'pm' ? 12 : 0);
+                      const minute = Number(minutes);
+                      date.setHours(hour);
+                      date.setMinutes(minute);
+                      setDate(new Date(date));
+                      setTime(hour + minute / 60);
                     }}
                   >
                     {(props) => (
@@ -198,13 +235,13 @@ const SaunaPlunge = () => {
                         onSubmit={props.handleSubmit}
                         className="flex flex-col w-full space-y-2 w-full"
                       >
-                        <div className="text-black">
+                        <div className="text-black flex space-x-3">
                           <Field
                             name="hours"
                             placeholder="Hours"
                             label="Hours"
                             component={Select}
-                            options={hourRange.map((hour) => (
+                            options={range(1, 13).map((hour) => (
                               <option key={hour} value={hour}>
                                 {hour}
                               </option>
@@ -217,11 +254,20 @@ const SaunaPlunge = () => {
                             component={Select}
                             options={minuteRange.map((minute) => (
                               <option key={minute} value={String(minute)}>
-                                {minute}
+                                {padZeros(minute)}
                               </option>
                             ))}
                           />
-                          <Field name="amPm" label="AM/PM" component={Select} />
+                          <Field
+                            name="amPm"
+                            label="AM/PM"
+                            component={Select}
+                            options={['am', 'pm'].map((time) => (
+                              <option key={time} value={time}>
+                                {time}
+                              </option>
+                            ))}
+                          />
                         </div>
                         <button type="submit" className="btn-primary">
                           Select
