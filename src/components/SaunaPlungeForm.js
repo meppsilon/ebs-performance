@@ -1,11 +1,8 @@
-import { navigate } from 'gatsby';
 import React from 'react';
 import { Form, Field } from 'react-final-form';
 import { writeSaunaPlungeData } from '../utils/firebase';
 import Input from './Input';
-
-// const allOff = ['ebs1216'];
-// const halfOff = ['half off', 'halfoff', 'half-off'];
+import { FORM_ERROR } from 'final-form';
 
 const saunaLinka = {
   test: 'https://buy.stripe.com/test_8wMaFWgOnavNaekdQU',
@@ -15,12 +12,6 @@ const plungeLink = {
   test: 'https://buy.stripe.com/test_eVa7tKeGfbzRfyE005',
   prod: 'https://buy.stripe.com/5kA5nk1424h7gWQ5kn',
 };
-
-// const findLink = (coupon) => {
-//   const allEnvLink = halfOff.includes(coupon) ? halfPriceLink : fullPriceLink;
-//   const env = window.location.host.startsWith('localhost') ? 'test' : 'prod';
-//   return allEnvLink[env];
-// };
 
 const SaunaPlungeForm = ({ date, type }) => {
   const validate = (values) => {
@@ -60,6 +51,10 @@ const SaunaPlungeForm = ({ date, type }) => {
               ? plungeLink.test
               : plungeLink.prod;
           }
+        } else {
+          return {
+            [FORM_ERROR]: 'Please enter correct passcode to schedule time!',
+          };
         }
       }}
       validate={validate}
@@ -118,6 +113,11 @@ const SaunaPlungeForm = ({ date, type }) => {
               containerClassName="w-full"
             />
           </div>
+          {props.submitError && (
+            <div className="text-red-600 text-center mt-2">
+              {props.submitError}
+            </div>
+          )}
           <div className="flex justify-end">
             <button type="submit" className="btn-primary">
               Checkout

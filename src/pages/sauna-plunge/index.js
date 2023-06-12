@@ -87,7 +87,7 @@ const SaunaPlunge = () => {
   );
   const baseMinuteRange = findMinuteRange();
   const filteredExistingTimes = existingTimes
-    .filter((t) => t.type === 'sauna')
+    .filter((t) => t.type === 'sauna' && radio === 'sauna')
     .map((t) => t.date);
   const selectedDayExistingTimes = filteredExistingTimes
     .filter((t) => isSelectedDate(new Date(t), date))
@@ -99,8 +99,6 @@ const SaunaPlunge = () => {
     (hour) =>
       selectedDayExistingTimes.findIndex((time) => time.hour === hour) === -1
   );
-  const hourRange = timeRange.filter((hour) => hour % 1 === 0);
-  console.log('hourRange', hourRange, timeRange);
   const minuteRange = baseMinuteRange.filter(
     (minute) =>
       selectedDayExistingTimes.findIndex((time) => time.minutes === minute) ===
@@ -228,7 +226,7 @@ const SaunaPlunge = () => {
                     ))}
                   </div>
                 )}
-                {radio === 'plunge' && hourRange.length > 0 && (
+                {radio === 'plunge' && timeRange.length > 0 && (
                   <Form
                     initialValues={{
                       hours: currentDisplayHour,
@@ -312,7 +310,7 @@ const SaunaPlunge = () => {
                     )}
                   </Form>
                 )}
-                {date && hourRange.length === 0 && (
+                {date && timeRange.length === 0 && (
                   <div className="flex flex-col w-full space-y-2 w-full">
                     No available times today
                   </div>
