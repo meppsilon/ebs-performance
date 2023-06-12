@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import Layout from '../../components/Layout';
-import { updateTurfSpaceData } from '../../utils/firebase';
+import { updateSaunaPlungeData } from '../../utils/firebase';
 
 const SaunaPlungeSuccess = () => {
   useEffect(() => {
     const updateSaunaPlungeWrapper = async () => {
       const sid = localStorage.getItem('sid');
       if (sid) {
-        await updateTurfSpaceData(sid, { paid: true });
+        await updateSaunaPlungeData(sid, { paid: true });
       }
       localStorage.removeItem('sid');
     };

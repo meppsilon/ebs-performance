@@ -4,7 +4,7 @@ import React from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import Layout from '../../components/Layout';
-import { getTurfSpaceData } from '../../utils/firebase';
+import { getSaunaPlungeData, getTurfSpaceData } from '../../utils/firebase';
 import Select from '../../components/Select';
 import { Field, Form } from 'react-final-form';
 import SaunaPlungeForm from '../../components/SaunaPlungeForm';
@@ -32,7 +32,7 @@ const formatTime = (hours) => {
 };
 
 const findTimeRange = (currentHour) => {
-  const fullHourRange = range(8, 21, 0.5);
+  const fullHourRange = range(8, 20, 0.5);
   return fullHourRange.filter((hour) => hour > currentHour);
 };
 
@@ -64,18 +64,32 @@ const typeMap = {
   plunge: 'Cold Plunge',
 };
 
+const plungeRange = (amPm) => {
+  const startTime = amPm === 'am' ? 8 : 1;
+  const endTime = amPm === 'am' ? 12 : 8;
+  return amPm === 'pm'
+    ? [12, ...range(startTime, endTime)]
+    : range(startTime, endTime);
+};
+
 const SaunaPlunge = () => {
   const today = new Date();
   const [radio, setRadio] = useState('sauna');
   const [date, setDate] = useState(today);
   const [time, setTime] = useState();
   const [existingTimes, setExistingTimes] = useState([]);
+  const [plungeError, setPlungeError] = useState('');
 
   const currentHour = today.getHours();
   const currentMinute = today.getMinutes();
-  const baseTimeRange = findTimeRange(isToday(date) ? currentHour : 0);
+  const baseTimeRange = findTimeRange(
+    isToday(date) ? currentHour + (currentMinute >= 30 ? 0.5 : 0) : 0
+  );
   const baseMinuteRange = findMinuteRange();
-  const selectedDayExistingTimes = existingTimes
+  const filteredExistingTimes = existingTimes
+    .filter((t) => t.type === 'sauna')
+    .map((t) => t.date);
+  const selectedDayExistingTimes = filteredExistingTimes
     .filter((t) => isSelectedDate(new Date(t), date))
     .map((t) => {
       const thatDate = new Date(t);
@@ -86,6 +100,7 @@ const SaunaPlunge = () => {
       selectedDayExistingTimes.findIndex((time) => time.hour === hour) === -1
   );
   const hourRange = timeRange.filter((hour) => hour % 1 === 0);
+  console.log('hourRange', hourRange, timeRange);
   const minuteRange = baseMinuteRange.filter(
     (minute) =>
       selectedDayExistingTimes.findIndex((time) => time.minutes === minute) ===
@@ -96,12 +111,12 @@ const SaunaPlunge = () => {
   const currentDisplayAmPm = currentHour / 12 < 1 ? 'am' : 'pm';
 
   useEffect(() => {
-    const getTurfSpaceWrapper = async () => {
-      const turfSpaceRegisters = await getTurfSpaceData();
-      const dates = turfSpaceRegisters.filter((e) => e.paid).map((e) => e.date);
+    const getSaunaPlungeWrapper = async () => {
+      const saunaPlungeRegisters = await getSaunaPlungeData();
+      const dates = saunaPlungeRegisters.filter((e) => e.paid);
       setExistingTimes(dates);
     };
-    getTurfSpaceWrapper();
+    getSaunaPlungeWrapper();
   }, []);
 
   return (
@@ -226,8 +241,22 @@ const SaunaPlunge = () => {
                       const minute = Number(minutes);
                       date.setHours(hour);
                       date.setMinutes(minute);
-                      setDate(new Date(date));
-                      setTime(hour + minute / 60);
+                      const newDate = new Date(date);
+                      const isTimeBooked = existingTimes.find(
+                        (t) => t.date === newDate.getTime()
+                      );
+                      if (isTimeBooked) {
+                        setPlungeError(
+                          'Sorry, this time slot is already booked.\nPlease find another time.'
+                        );
+                      } else if (newDate.getTime() < Date.now()) {
+                        setPlungeError(
+                          'Sorry, this time slot is in the past.\nPlease find another time.'
+                        );
+                      } else {
+                        setDate(newDate);
+                        setTime(hour + minute / 60);
+                      }
                     }}
                   >
                     {(props) => (
@@ -241,11 +270,13 @@ const SaunaPlunge = () => {
                             placeholder="Hours"
                             label="Hours"
                             component={Select}
-                            options={range(1, 13).map((hour) => (
-                              <option key={hour} value={hour}>
-                                {hour}
-                              </option>
-                            ))}
+                            options={plungeRange(props.values.amPm).map(
+                              (hour) => (
+                                <option key={hour} value={hour}>
+                                  {hour}
+                                </option>
+                              )
+                            )}
                           />
                           <Field
                             name="minutes"
@@ -269,6 +300,11 @@ const SaunaPlunge = () => {
                             ))}
                           />
                         </div>
+                        {plungeError && (
+                          <div className="text-red-600 text-center mt-2 max-w-[248px]">
+                            {plungeError}
+                          </div>
+                        )}
                         <button type="submit" className="btn-primary">
                           Select
                         </button>

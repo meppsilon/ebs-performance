@@ -22,20 +22,20 @@ const writeData = (key) => async (data) => {
   };
   await set(listRef, modifiedData);
   return modifiedData;
-}
+};
 
 const updateListData = (key) => async (id, updateData) => {
   const db = getDatabase(app);
   const listRef = ref(db, `${key}/${id}`);
   await update(listRef, updateData);
-}
+};
 
 const getData = (key) => async () => {
   const db = getDatabase(app);
   const listRef = ref(db, key);
   const snapshot = await get(listRef);
   return Object.values(snapshot.val());
-}
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -101,17 +101,16 @@ export const updateYouthCampData = updateListData('youthCamp');
 
 export const getYouthCampData = getData('youthCamp');
 
-
 // Contact data
 export const writeContactData = writeData('contacts');
 
 export const updateContactData = updateListData('contacts');
 
-export const getContactsData = getData('contacts')
+export const getContactsData = getData('contacts');
 
 // Sauna plunge data
 export const writeSaunaPlungeData = writeData('saunaPlunge');
 
 export const updateSaunaPlungeData = updateListData('saunaPlunge');
 
-export const getSaunaPlungeData = getData('saunaPlunge')
+export const getSaunaPlungeData = getData('saunaPlunge');

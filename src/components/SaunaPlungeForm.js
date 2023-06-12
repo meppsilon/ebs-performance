@@ -7,14 +7,14 @@ import Input from './Input';
 // const allOff = ['ebs1216'];
 // const halfOff = ['half off', 'halfoff', 'half-off'];
 
-// const fullPriceLink = {
-//   test: 'https://buy.stripe.com/test_7sIaFW55FfQ786c7st',
-//   prod: 'https://buy.stripe.com/7sI1744ge00R5e8bIK',
-// };
-// const halfPriceLink = {
-//   test: 'https://buy.stripe.com/test_bIY4hygOn1Zh0DKeUW',
-//   prod: 'https://buy.stripe.com/5kA5nk1424h7gWQ5kn',
-// };
+const saunaLinka = {
+  test: 'https://buy.stripe.com/test_8wMaFWgOnavNaekdQU',
+  prod: 'https://buy.stripe.com/7sI1744ge00R5e8bIK',
+};
+const plungeLink = {
+  test: 'https://buy.stripe.com/test_eVa7tKeGfbzRfyE005',
+  prod: 'https://buy.stripe.com/5kA5nk1424h7gWQ5kn',
+};
 
 // const findLink = (coupon) => {
 //   const allEnvLink = halfOff.includes(coupon) ? halfPriceLink : fullPriceLink;
@@ -42,15 +42,25 @@ const SaunaPlungeForm = ({ date, type }) => {
   return (
     <Form
       onSubmit={async (data) => {
-        const coupon = data.discount?.toLowerCase();
-        // add data to firebase
-        const saunaPlunge = await writeSaunaPlungeData({
-          ...data,
-          type,
-          date: date.getTime(),
-        });
-        await localStorage.setItem('sid', saunaPlunge.id);
-        navigate('/sauna-plunge/success');
+        const passcode = data.passcode?.toLowerCase();
+        if (passcode === 'secret passcode') {
+          // add data to firebase
+          const saunaPlunge = await writeSaunaPlungeData({
+            ...data,
+            type,
+            date: date.getTime(),
+          });
+          await localStorage.setItem('sid', saunaPlunge.id);
+          if (type === 'sauna') {
+            window.location = window.location.host.startsWith('localhost')
+              ? saunaLinka.test
+              : saunaLinka.prod;
+          } else {
+            window.location = window.location.host.startsWith('localhost')
+              ? plungeLink.test
+              : plungeLink.prod;
+          }
+        }
       }}
       validate={validate}
     >
@@ -100,9 +110,9 @@ const SaunaPlungeForm = ({ date, type }) => {
           </div>
           <div className="mb-6">
             <Field
-              name="discount"
+              name="passcode"
               placeholder="Enter code"
-              label="Discount code"
+              label="Pass code"
               component={Input}
               type="text"
               containerClassName="w-full"
