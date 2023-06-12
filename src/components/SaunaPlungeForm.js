@@ -6,11 +6,11 @@ import { FORM_ERROR } from 'final-form';
 
 const saunaLinka = {
   test: 'https://buy.stripe.com/test_8wMaFWgOnavNaekdQU',
-  prod: 'https://buy.stripe.com/7sI1744ge00R5e8bIK',
+  prod: 'https://buy.stripe.com/cN23fc5ki4h736028e',
 };
 const plungeLink = {
   test: 'https://buy.stripe.com/test_eVa7tKeGfbzRfyE005',
-  prod: 'https://buy.stripe.com/5kA5nk1424h7gWQ5kn',
+  prod: 'https://buy.stripe.com/9AQ8zw4ge00R21W5kr',
 };
 
 const SaunaPlungeForm = ({ date, type }) => {
