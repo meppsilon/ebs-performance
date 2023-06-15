@@ -2,6 +2,8 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import YouthCampForm from '../../components/YouthCampForm';
 
+const closed = false;
+
 const YouthCamp = () => {
   return (
     <Layout className="bg-ebsBlack text-white">
@@ -21,8 +23,19 @@ const YouthCamp = () => {
             <strong>Who:</strong> Players of ages 6 - 15
           </div>
         </div>
-        <div className="text-xl font-semibold mb-6">Registration Form</div>
-        <YouthCampForm />
+        {closed ? (
+          <div>
+            <h2>Registration closed!</h2>
+            <div>
+              Thank you to all for applying to the Youth Camp. See you tomorrow!
+            </div>
+          </div>
+        ) : (
+          <>
+            <div className="text-xl font-semibold mb-6">Registration Form</div>
+            <YouthCampForm />
+          </>
+        )}
       </div>
     </Layout>
   );
