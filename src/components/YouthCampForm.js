@@ -51,7 +51,7 @@ const YouthCampForm = () => {
         onSubmit={async (data) => {
           const youthCampData = await writeYouthCampData(data);
           await localStorage.setItem('yid', youthCampData.id);
-          navigate('/youth-camp/waiver')
+          navigate('/youth-camp/waiver');
         }}
         validate={validate}
       >

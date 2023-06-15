@@ -1,12 +1,11 @@
 import React, { Fragment } from 'react';
 import { Form, Field } from 'react-final-form';
 import Input from './Input';
-import {
-  updateYouthCampData,
-} from '../utils/firebase';
+import { updateYouthCampData } from '../utils/firebase';
+import { navigate } from 'gatsby';
 
-const prodLink = 'https://buy.stripe.com/4gw2b88wu8xncGA28d';
-const testLink = 'https://buy.stripe.com/test_4gwaFWcy7cDV1HOaEH';
+// const prodLink = 'https://buy.stripe.com/4gw2b88wu8xncGA28d';
+// const testLink = 'https://buy.stripe.com/test_4gwaFWcy7cDV1HOaEH';
 
 const YouthCampForm = () => {
   const validate = (values) => {
@@ -57,9 +56,7 @@ const YouthCampForm = () => {
         onSubmit={async () => {
           const yid = localStorage.getItem('yid');
           await updateYouthCampData(yid, { waiverSigned: true });
-          window.location = window.location.host.startsWith('localhost')
-            ? testLink
-            : prodLink;
+          navigate('/youth-camp/success');
         }}
         validate={validate}
       >
@@ -87,7 +84,10 @@ const YouthCampForm = () => {
                 />
               </div>
             </div>
-            <div className="text-white mb-6">By clicking the button below, you agree to the terms of our Youth Camp Waiver Form.</div>
+            <div className="text-white mb-6">
+              By clicking the button below, you agree to the terms of our Youth
+              Camp Waiver Form.
+            </div>
             <div className="flex justify-end">
               <button type="submit" className="btn-primary">
                 Sign waiver
