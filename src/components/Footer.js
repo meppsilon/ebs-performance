@@ -46,9 +46,12 @@ const Footer = class extends React.Component {
             </div>
             <div className="flex flex-col mb-6 md:w-1/3">
               <div className="uppercase text-lg font-bold mb-4">Pages</div>
-              {/* <Link className="mb-3 font-semibold" to="/combine-training">
-                Combine Training
-              </Link> */}
+              <Link
+                className="mb-3 hover:underline font-semibold"
+                to="/youth-camp"
+              >
+                Youth Camp
+              </Link>
               <Link className="mb-3 font-semibold" to="/trainers">
                 Trainers
               </Link>
@@ -64,19 +67,17 @@ const Footer = class extends React.Component {
               >
                 Contact
               </Link> */}
-               {/* <Link
-                className="mb-3 hover:underline font-semibold"
-                to="/bench-press"
-              >
-                Bench Press Contest
-              </Link> */}
             </div>
           </div>
           <div className="mb-6">
             <div className="text-lg font-bold uppercase mb-5">Partners</div>
             <div className="flex flex-wrap">
-            <div className="mb-4"><img src={cuirimLogo} className="h-16" /></div>
-            <div className="mb-4 ml-6"><img src={americanBBLogo} className="h-16" /></div>
+              <div className="mb-4">
+                <img src={cuirimLogo} className="h-16" />
+              </div>
+              <div className="mb-4 ml-6">
+                <img src={americanBBLogo} className="h-16" />
+              </div>
             </div>
           </div>
           <div className="mb-6">

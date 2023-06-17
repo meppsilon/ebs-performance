@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
+import youthCampFlyer from '../img/youth-camp-flyer.jpg';
 
 import Layout from '../components/Layout';
 import FullWidthImage from '../components/FullWidthImage';
@@ -22,6 +23,34 @@ export const IndexPageTemplate = ({ image }) => {
         <div className="text-xl sm:text-2xl font-light mt-12 md:mt-0 md:w-5/12 md:pl-4 leading-normal">
           We provide premier sports performance training, personal training +
           group fitness classes for Orange County.
+        </div>
+      </div>
+      <div className="px-6 md:px-16 pb-12 md:pb-20 w-full bg-ebsBlack text-white">
+        <div className="w-full border-t border-white pt-12 md:pb-20" />
+        <div className="text-3xl font-bold text-center mb-10">
+          Upcoming Events
+        </div>
+        <div className="text-center md:text-left md:flex justify-around items-center">
+          <div className="md:mr-10">
+            <div className="text-2xl font-semibold mb-4">
+              Youth Football Camp
+            </div>
+            <div className="mb-8">
+              Sponsored by <strong>EBS Performance + Fitness</strong> and&nbsp;
+              <strong>CDM Touchdown Club</strong>
+            </div>
+            <Link
+              to="/youth-camp"
+              className="btn-primary inline-block mb-8 no-underline"
+            >
+              Register
+            </Link>
+          </div>
+          <img
+            src={youthCampFlyer}
+            className="w-1/2"
+            style={{ maxWidth: '350px' }}
+          />
         </div>
       </div>
       <WhatWeOffer />

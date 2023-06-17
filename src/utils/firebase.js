@@ -34,7 +34,7 @@ const getData = (key) => async () => {
   const db = getDatabase(app);
   const listRef = ref(db, key);
   const snapshot = await get(listRef);
-  return Object.values(snapshot.val());
+  return snapshot.val() ? Object.values(snapshot.val()) : [];
 };
 
 // Initialize Firebase

@@ -57,12 +57,12 @@ const Navbar = class extends React.Component {
               className={`navbar-menu ${this.state.navBarActiveClass} flex`}
             >
               <div className="flex">
-                {/* <Link
+                <Link
                   className="navbar-item flex items-center no-underline"
-                  to="/combine-training"
+                  to="/youth-camp"
                 >
-                  Combine Training
-                </Link> */}
+                  Youth Camp
+                </Link>
                 <Link
                   className="navbar-item flex items-center no-underline"
                   to="/trainers"
@@ -108,7 +108,7 @@ const Navbar = class extends React.Component {
         {open && (
           <SmallMenu
             sections={[
-              // { title: 'Combine Training', link: 'combine-training' },
+              { title: 'Youth Camp', link: 'youth-camp' },
               { title: 'Trainers', link: 'trainers' },
               { title: 'Gallery', link: 'gallery' },
               { title: 'About', link: 'about' },

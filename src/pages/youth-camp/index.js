@@ -14,10 +14,16 @@ const YouthCamp = () => {
         <div className="mb-6">
           <div className="text-xl font-semibold mb-4">Event information</div>
           <div className="mb-2">
-            <strong>Where:</strong> Costa Mesa High School
+            <strong>Where:</strong><br />
+              Corona Del Mar High School<br />
+              2101 Eastbluff Dr<br />
+              Newport Beach, CA 92660
           </div>
           <div className="mb-2">
-            <strong>When:</strong> July 9th, 2022 from 10am - 1pm
+            <strong>When:</strong> Wednesday July 12th, 2023
+          </div>
+          <div className="mb-2">
+            <strong>Time:</strong> 4pm check-in (5pm - 7pm camp)
           </div>
           <div className="mb-2">
             <strong>Who:</strong> Players of ages 6 - 15
