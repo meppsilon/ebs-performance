@@ -57,7 +57,7 @@ const ProteinPowder = () => (
               <strong>Flavor:</strong> Vanilla
             </em>
           </div>
-          <div className="mb-6">
+          <div className="mb-8">
             <em>
               <strong>Allergens:</strong> Contains Milk
             </em>
