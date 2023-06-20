@@ -52,6 +52,12 @@ const Footer = class extends React.Component {
               >
                 Youth Camp
               </Link>
+              <Link
+                className="mb-3 hover:underline font-semibold"
+                to="/protein-powder"
+              >
+                Protein Powder
+              </Link>
               <Link className="mb-3 font-semibold" to="/trainers">
                 Trainers
               </Link>

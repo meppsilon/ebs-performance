@@ -65,6 +65,12 @@ const Navbar = class extends React.Component {
                 </Link>
                 <Link
                   className="navbar-item flex items-center no-underline"
+                  to="/protein-powder"
+                >
+                  Protein Powder
+                </Link>
+                <Link
+                  className="navbar-item flex items-center no-underline"
                   to="/trainers"
                 >
                   Trainers
@@ -109,6 +115,7 @@ const Navbar = class extends React.Component {
           <SmallMenu
             sections={[
               { title: 'Youth Camp', link: 'youth-camp' },
+              { title: 'Protein Powder', link: 'protein-powder' },
               { title: 'Trainers', link: 'trainers' },
               { title: 'Gallery', link: 'gallery' },
               { title: 'About', link: 'about' },
