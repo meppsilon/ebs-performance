@@ -11,8 +11,6 @@ export default function FullWidthImage(props) {
     imgPosition = '50% 50%',
   } = props;
 
-  console.log('src', img)
-
   return (
     <React.Fragment>
       <div
@@ -68,18 +66,20 @@ export default function FullWidthImage(props) {
           }}
         >
           {/* Any content here will be centered in the component */}
-          {title && <h1
-            className="font-bold text-xl sm:text-2xl md:text-4xl"
-            style={{
-              boxShadow: '#BD0D1E 0.5rem 0px 0px, #BD0D1E -0.5rem 0px 0px',
-              backgroundColor: '#BD0D1E',
-              color: 'white',
-              lineHeight: '1',
-              padding: '0.25em',
-            }}
-          >
-            {title}
-          </h1>}
+          {title && (
+            <h1
+              className="font-bold text-xl sm:text-2xl md:text-4xl"
+              style={{
+                boxShadow: '#BD0D1E 0.5rem 0px 0px, #BD0D1E -0.5rem 0px 0px',
+                backgroundColor: '#BD0D1E',
+                color: 'white',
+                lineHeight: '1',
+                padding: '0.25em',
+              }}
+            >
+              {title}
+            </h1>
+          )}
           {/* <h3
             className="text-bold text-md sm:text-lg md:text-2xl"
             style={{
