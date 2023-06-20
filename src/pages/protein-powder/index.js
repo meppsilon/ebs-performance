@@ -36,20 +36,33 @@ const ProteinPowder = () => (
           <div className="text-xl mb-6">$75</div>
           <div className="mb-4">
             <em>
+              Banned Substance Tested by&nbsp;
+              <strong>
+                <a href="https://sport.wetestyoutrust.com/">Informed Sport</a>
+              </strong>
+            </em>
+          </div>
+          <div className="mb-4">
+            <em>29g of Protein per Serving</em>
+          </div>
+          <div className="mb-4">
+            <em>
+              <strong>Flavor:</strong> Vanilla
+            </em>
+          </div>
+          <div className="mb-4">
+            <em>
               <strong>Ingredients:</strong> Whey Protein Isolate, Natural
               Flavors,
               <br />
               Stevia, Sunflower Oil.
             </em>
           </div>
-          <ul className="font-semibold mb-6 space-y-4">
-            <li>
-              Banned Substance Tested by&nbsp;
-              <a href="https://sport.wetestyoutrust.com/">Informed Sport</a>
-            </li>
-            <li>29g of Protein per Serving</li>
-            <li>4 Simple Ingredients</li>
-          </ul>
+          <div className="mb-6">
+            <em>
+              <strong>Allergens:</strong> Contains Milk
+            </em>
+          </div>
           <button
             className="btn-primary"
             onClick={() => {
