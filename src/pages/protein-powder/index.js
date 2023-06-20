@@ -14,9 +14,8 @@ const images = [
   nutritionFactsImage,
 ];
 
-const buyLink = window.location.host.startsWith('localhost')
-  ? 'https://buy.stripe.com/test_6oEcO4gOn5bt86cdQW'
-  : 'https://buy.stripe.com/14kbLIfYW14V8qk3cl';
+const buyLinkProd = 'https://buy.stripe.com/14kbLIfYW14V8qk3cl';
+const buyLinkTest = 'https://buy.stripe.com/test_6oEcO4gOn5bt86cdQW';
 
 const ProteinPowder = () => (
   <Layout className="bg-ebsBlack text-white">
@@ -66,7 +65,9 @@ const ProteinPowder = () => (
           <button
             className="btn-primary"
             onClick={() => {
-              window.location = buyLink;
+              window.location = window.location.hostname.startsWith('localhost')
+                ? buyLinkTest
+                : buyLinkProd;
             }}
           >
             Buy now
