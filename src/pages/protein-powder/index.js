@@ -46,15 +46,15 @@ const ProteinPowder = () => (
           </div>
           <div className="mb-4">
             <em>
-              <strong>Flavor:</strong> Vanilla
-            </em>
-          </div>
-          <div className="mb-4">
-            <em>
               <strong>Ingredients:</strong> Whey Protein Isolate, Natural
               Flavors,
               <br />
               Stevia, Sunflower Oil.
+            </em>
+          </div>
+          <div className="mb-4">
+            <em>
+              <strong>Flavor:</strong> Vanilla
             </em>
           </div>
           <div className="mb-6">
