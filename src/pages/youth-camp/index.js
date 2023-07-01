@@ -2,7 +2,9 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import YouthCampForm from '../../components/YouthCampForm';
 
-const closed = false;
+const noonJuly1st = new Date(2023, 6, 1, 12);
+
+const registrationClosed = Date.now() > noonJuly1st;
 
 const YouthCamp = () => {
   return (
@@ -29,11 +31,11 @@ const YouthCamp = () => {
             <strong>Who:</strong> Players of ages 6 - 15
           </div>
         </div>
-        {closed ? (
+        {registrationClosed ? (
           <div>
-            <h2>Registration closed!</h2>
+            <h2>Registration is now closed!</h2>
             <div>
-              Thank you to all for applying to the Youth Camp. See you tomorrow!
+              Thank you to all for applying to the Youth Camp. See you on July 12th!
             </div>
           </div>
         ) : (

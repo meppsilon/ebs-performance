@@ -8,6 +8,10 @@ import Layout from '../components/Layout';
 import FullWidthImage from '../components/FullWidthImage';
 import WhatWeOffer from '../components/WhatWeOffer';
 
+const noonJuly1st = new Date(2023, 6, 1, 12);
+
+const registrationClosed = Date.now() > noonJuly1st;
+
 // eslint-disable-next-line
 export const IndexPageTemplate = ({ image }) => {
   const heroImage = getImage(image) || image;
@@ -39,12 +43,21 @@ export const IndexPageTemplate = ({ image }) => {
               Sponsored by <strong>EBS Performance + Fitness</strong> and&nbsp;
               <strong>CDM Touchdown Club</strong>
             </div>
-            <Link
-              to="/youth-camp"
-              className="btn-primary inline-block mb-8 no-underline"
-            >
-              Register
-            </Link>
+            {registrationClosed ? (
+              <button
+                className="btn-primary inline-block mb-8 no-underline cursor-not-allowed opacity-50"
+                disabled
+              >
+                Registration closed
+              </button>
+            ) : (
+              <Link
+                to="/youth-camp"
+                className="btn-primary inline-block mb-8 no-underline"
+              >
+                Register
+              </Link>
+            )}
           </div>
           <img
             src={youthCampFlyer}
