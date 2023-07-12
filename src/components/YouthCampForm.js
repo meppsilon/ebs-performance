@@ -6,15 +6,6 @@ import Select from './Select';
 import { navigate } from 'gatsby';
 
 const YouthCampForm = () => {
-  const [enrolleeEmails, setEnrolleeEmails] = useState([]);
-  useEffect(() => {
-    const getYouthCampWrapper = async () => {
-      const youthCampEnrollees = await getYouthCampData();
-      const emails = youthCampEnrollees.map((e) => e.email);
-      setEnrolleeEmails(emails);
-    };
-    getYouthCampWrapper();
-  }, []);
   const validate = (values) => {
     const errors = {};
     if (!values.firstName) {
@@ -37,8 +28,6 @@ const YouthCampForm = () => {
     }
     if (!values.email) {
       errors.email = 'Required!';
-    } else if (enrolleeEmails.includes(values.email)) {
-      errors.email = 'This email has already registered!';
     }
     if (!values.phone) {
       errors.phone = 'Required!';
