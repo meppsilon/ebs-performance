@@ -46,7 +46,7 @@ const Footer = class extends React.Component {
             </div>
             <div className="flex flex-col mb-6 md:w-1/3">
               <div className="uppercase text-lg font-bold mb-4">Pages</div>
-              <Link
+              {/* <Link
                 className="mb-3 hover:underline font-semibold"
                 to="/youth-camp"
               >
@@ -57,7 +57,7 @@ const Footer = class extends React.Component {
                 to="/protein-powder"
               >
                 Protein Powder
-              </Link>
+              </Link> */}
               <Link className="mb-3 font-semibold" to="/trainers">
                 Trainers
               </Link>
