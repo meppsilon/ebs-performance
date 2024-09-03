@@ -16,7 +16,7 @@ const TrainersPage = ({ data }) => (
       <div className="flex flex-col z-10 pt-20 md:pt-28 px-4">
         <img
           src={data.markdownRemark.frontmatter.profile?.publicURL}
-          className="w-24 h-24 md:w-32 md:h-32 rounded-sm bg-white mr-4 rounded-full ring-4 ring-ebsBlack z-10"
+          className="w-24 h-24 md:w-32 md:h-32 rounded-sm bg-white mr-4 rounded-full ring-4 ring-ebsBlack z-10 object-cover"
         />
         <div className="mt-4 mb-8">
           <div className="font-bold text-xl flex items-center">
