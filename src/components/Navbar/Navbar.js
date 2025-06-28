@@ -57,13 +57,13 @@ const Navbar = class extends React.Component {
               className={`navbar-menu ${this.state.navBarActiveClass} flex`}
             >
               <div className="flex">
-                {/* <Link
+                <Link
                   className="navbar-item flex items-center no-underline"
                   to="/youth-camp"
                 >
                   Youth Camp
                 </Link>
-                <Link
+                {/* <Link
                   className="navbar-item flex items-center no-underline"
                   to="/protein-powder"
                 >

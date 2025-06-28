@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
-import youthCampFlyer from '../img/youth-camp-flyer.jpg';
+import youthCampFlyer from '../img/youth-camp-flyer.png';
 
 import Layout from '../components/Layout';
 import FullWidthImage from '../components/FullWidthImage';
 import WhatWeOffer from '../components/WhatWeOffer';
 
-const noonJuly1st = new Date(2023, 6, 1, 12);
+const noonJuly9th = new Date(2025, 6, 9, 12);
 
-const registrationClosed = Date.now() > noonJuly1st;
+const registrationClosed = Date.now() > noonJuly9th;
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({ image }) => {
@@ -40,8 +40,7 @@ export const IndexPageTemplate = ({ image }) => {
               Youth Football Camp
             </div>
             <div className="mb-8">
-              Sponsored by <strong>EBS Performance + Fitness</strong> and&nbsp;
-              <strong>CDM Touchdown Club</strong>
+              At Corona Del Mar High School on July 9th, 2025
             </div>
             {registrationClosed ? (
               <button

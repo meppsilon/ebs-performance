@@ -2,9 +2,9 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import YouthCampForm from '../../components/YouthCampForm';
 
-const noonJuly1st = new Date(2023, 6, 1, 12);
+const noonJuly9th = new Date(2025, 6, 9, 12);
 
-const registrationClosed = Date.now() > noonJuly1st;
+const registrationClosed = Date.now() > noonJuly9th;
 
 const YouthCamp = () => {
   return (
@@ -22,13 +22,13 @@ const YouthCamp = () => {
               Newport Beach, CA 92660
           </div>
           <div className="mb-2">
-            <strong>When:</strong> Wednesday July 12th, 2023
+            <strong>When:</strong> Wednesday July 9th, 2025
           </div>
           <div className="mb-2">
-            <strong>Time:</strong> 4pm check-in (5pm - 7pm camp)
+            <strong>Time:</strong> 4:30pm check-in (5:30pm - 7:30pm camp)
           </div>
           <div className="mb-2">
-            <strong>Who:</strong> Players of ages 6 - 15
+            <strong>Who:</strong> Players of ages 5 - 13
           </div>
         </div>
         {registrationClosed ? (
