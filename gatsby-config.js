@@ -1,3 +1,5 @@
+const adapter = require("gatsby-adapter-netlify");
+
 module.exports = {
   siteMetadata: {
     title: 'EBS Performance + Fitness',
@@ -75,4 +77,8 @@ module.exports = {
     }, // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
+  adapter: adapter({
+    excludeDatastoreFromEngineFunction: false,
+    imageCDN: false,
+  })
 };
