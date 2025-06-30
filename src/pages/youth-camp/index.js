@@ -35,7 +35,7 @@ const YouthCamp = () => {
           <div>
             <h2>Registration is now closed!</h2>
             <div>
-              Thank you to all for applying to the Youth Camp. See you on July 12th!
+              Thank you to all for applying to the Youth Camp. See you on July 9th!
             </div>
           </div>
         ) : (
