@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, set, push, update, get } from 'firebase/database';
+import { getDatabase, ref, set, push, update, get, remove } from 'firebase/database';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAqLpbJrGslKK7akl8DlhWPvSxF7l9VhNw',
@@ -10,6 +10,12 @@ const firebaseConfig = {
   messagingSenderId: '628743068872',
   appId: '1:628743068872:web:664402c8fc0dbb05bc19fd',
   measurementId: 'G-J377L7Y4F9',
+};
+
+const removeData = (key) => async (id) => {
+  const db = getDatabase(app);
+  const listRef = ref(db, `${key}/${id}`);
+  await remove(listRef);
 };
 
 const writeData = (key) => async (data) => {
@@ -100,6 +106,8 @@ export const writeYouthCampData = writeData('youthCamp');
 export const updateYouthCampData = updateListData('youthCamp');
 
 export const getYouthCampData = getData('youthCamp');
+
+export const removeYouthCampData = removeData('youthCamp');
 
 // Contact data
 export const writeContactData = writeData('contacts');

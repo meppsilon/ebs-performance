@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { getYouthCampData, removeYouthCampData } from '../../utils/firebase';
 import Layout from '../../components/Layout';
 import YouthCampForm from '../../components/YouthCampForm';
 
-const noonJuly9th = new Date(2025, 6, 9, 12);
+const noonJuly7th = new Date(2025, 6, 7, 12);
 
-const registrationClosed = Date.now() > noonJuly9th;
+const registrationClosed = Date.now() > noonJuly7th;
 
 const YouthCamp = () => {
   return (
@@ -16,10 +17,13 @@ const YouthCamp = () => {
         <div className="mb-6">
           <div className="text-xl font-semibold mb-4">Event information</div>
           <div className="mb-2">
-            <strong>Where:</strong><br />
-              Corona Del Mar High School<br />
-              2101 Eastbluff Dr<br />
-              Newport Beach, CA 92660
+            <strong>Where:</strong>
+            <br />
+            Corona Del Mar High School
+            <br />
+            2101 Eastbluff Dr
+            <br />
+            Newport Beach, CA 92660
           </div>
           <div className="mb-2">
             <strong>When:</strong> Wednesday July 9th, 2025
@@ -35,7 +39,8 @@ const YouthCamp = () => {
           <div>
             <h2>Registration is now closed!</h2>
             <div>
-              Thank you to all for applying to the Youth Camp. See you on July 9th!
+              Thank you to all for applying to the Youth Camp. See you on July
+              9th!
             </div>
           </div>
         ) : (

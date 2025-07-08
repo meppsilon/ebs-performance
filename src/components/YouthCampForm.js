@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import Input from './Input';
-import { getYouthCampData, writeYouthCampData } from '../utils/firebase';
+import { writeYouthCampData } from '../utils/firebase';
 import Select from './Select';
 import { navigate } from 'gatsby';
 

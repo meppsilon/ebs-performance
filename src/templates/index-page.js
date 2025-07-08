@@ -8,9 +8,9 @@ import Layout from '../components/Layout';
 import FullWidthImage from '../components/FullWidthImage';
 import WhatWeOffer from '../components/WhatWeOffer';
 
-const noonJuly9th = new Date(2025, 6, 9, 12);
+const noonJuly7th = new Date(2025, 6, 7, 12);
 
-const registrationClosed = Date.now() > noonJuly9th;
+const registrationClosed = Date.now() > noonJuly7th;
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({ image }) => {
